@@ -171,7 +171,7 @@ export default function Projects() {
 						<Container key={index} className='w-[600px] m-[20px] self-center'>
 							<Container className='h-[78px] flex flex-row' borders='b'>
 								<Container className='min-w-[76px] h-full flex items-center justify-center' borders='r'>
-									<Image src={`./images/${project.icon}.png`} alt={project.icon} className='invert dark:invert-0' width={60} height={60}/>
+									<Image src={`/images/${project.icon}.png`} alt={project.icon} className='invert dark:invert-0' width={60} height={60}/>
 								</Container>
 
 								<div className='relative w-full h-full flex items-center justify-center sm:block sm:pl-2 sm:pt-1'>

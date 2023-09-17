@@ -10,7 +10,7 @@ export default function NotFound() {
 			<p className='text-lg pb-1 flex items-center justify-center'>This page does not exist!</p>
 
 			<Container borders='tb'>
-				<Image src={'./raccoon.gif'} alt='raccoon' width={300} height={300}/>
+				<Image src={'/raccoon.gif'} alt='raccoon' width={300} height={300}/>
 			</Container>
 
 			<Button link='/' borders=''>
