@@ -84,11 +84,13 @@ export default function Header () {
 		} else {
 			buttons[0].icon = 'logo'
 		}
-		
+
 		return (
 			<Container className='relative w-full h-[80px] z-20 flex flex-row'>
 				{buttons.map((button, index) => {
-					return <HeaderButton key={index} button={button} borders={index == 0 ? '' : 'l'}/>
+					return <HeaderButton key={index} button={button} borders={index == 0 ? '' : 'l'} callback={() => {
+						setIsExpanded(false)
+					}}/>
 				})}
 			</Container>
 		)
