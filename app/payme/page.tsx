@@ -33,7 +33,7 @@ const notifications: Array<Notification> = [
 		button: 'Cancel'
 	},
 	{
-		text: 'Thank you! Working with you was pure pleasure!',
+		text: 'Transaction completed. Thank you!',
 		button: 'Home'
 	}
 ]

@@ -1,7 +1,7 @@
 import {
 	SiLua, SiTypescript, SiJavascript, SiCplusplus, SiSwift, SiTailwindcss, SiNodedotjs, SiDocker,
-	SiReact, SiNextdotjs, SiVapor, SiSpotify,
-	SiGit, SiVisualstudiocode, SiXcode, SiRobloxstudio, SiRoblox, SiGithub, SiMicrosoft
+	SiReact, SiNextdotjs, SiVapor, SiSpotify, SiGit, SiVercel,
+	SiVisualstudiocode, SiXcode, SiRobloxstudio, SiRoblox, SiGithub, SiMicrosoft
 } from 'react-icons/si'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 import { BiError } from 'react-icons/bi'
@@ -40,7 +40,7 @@ const projects: Array<Project> = [
 	},
 	{
 		name: 'This page',
-		technologies: ['ts', 'tailwind', 'react', 'next', 'node'],
+		technologies: ['ts', 'tailwind', 'react', 'next', 'vercel', 'node'],
 		time: 'August 2023',
 		icon: 'dervex',
 		desc: 'Well, every developer needs their own site, right? So here is mine! As you can see priorates were monochrome color scheme and simplicity. Those mysterious squares close to the GitHub logo are my contribution this year. Try resizing the window to see some magic happen! Also, this page has 100% score in every Google Lighthouse category.',
@@ -88,6 +88,8 @@ export default function Projects() {
 					return <div key={index} className='pl-2'><SiReact/></div>
 				case 'next':
 					return <div key={index} className='pl-2'><SiNextdotjs/></div>
+				case 'vercel':
+					return <div key={index} className='pl-2'><SiVercel/></div>
 				case 'vapor':
 					return <div key={index} className='pl-2'><SiVapor/></div>
 				case 'spotify':
