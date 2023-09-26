@@ -31,6 +31,14 @@ const projects: Array<Project> = [
 		links: ['https://github.com/DervexHero/Argon', 'https://marketplace.visualstudio.com/items?itemName=Dervex.argon', 'https://create.roblox.com/marketplace/asset/11263738833/', 'https://devforum.roblox.com/t/2021776', 'https://argonstatsapi.web.app/']
 	},
 	{
+		name: 'LUNO',
+		technologies: ['js', 'vsc'],
+		time: 'September 2023',
+		icon: 'luno',
+		desc: <>Lua Universal Negation Operator – ultra compact VSC extension (about 20 lines) that allows you to use exclamation mark as a negation operator in Lua or Luau. LUNO converts <b>!=</b> to <b>~=</b> as you type so there is no need to set up any additional stuff.</>,
+		links: ['https://github.com/DervexHero/luno', 'https://marketplace.visualstudio.com/items?itemName=Dervex.luno']
+	},
+	{
 		name: 'Spotify SA',
 		technologies: ['swift', 'docker', 'vapor', 'xcode', 'spotify'],
 		time: 'August 2023',
