@@ -20,25 +20,25 @@ interface Contact {
 const contacts: Array<Contact> = [
 	{
 		name: 'Discord',
-		desc: 'For general purposes add me on discord',
-		link: 'https://discord.com/invite/tvGMCbG9',
+		desc: 'The best way to get in touch with me',
+		link: 'https://discord.com/invite/maybesomeday',
 		icon: <SiDiscord/>
 	},
 	{
 		name: 'X',
-		desc: 'For one-time questions dm me on X',
-		link: 'https://x.com/messages/compose?recipient_id=1388272049748156416',
+		desc: 'Another great way to contact with me',
+		link: 'https://x.com/DervexHero',
 		icon: <SiX/>
 	},
 	{
 		name: 'Email',
-		desc: 'For urgent questions contact with me by e-mail',
+		desc: 'Only for important questions or offers',
 		link: 'mailto:contact@dervex.dev',
 		icon: <HiMail/>
 	},
 	{
 		name: 'DevForum',
-		desc: 'If you are devforum user you can dm me here',
+		desc: 'The best alternative for DevForum users',
 		link: 'https://devforum.roblox.com/u/dervex/summary',
 		icon: <SiRobloxstudio/>
 	},

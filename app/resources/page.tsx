@@ -93,7 +93,7 @@ export default function Resources() {
 				return (
 					<Container key={index} className='w-[600px] m-[20px] self-center'>
 						<Container className='h-[78px] flex flex-row' borders='b'>
-							<Container className='min-w-[76px] h-[76px] text-4xl flex items-center justify-center' borders='r'>
+							<Container className='min-w-[76px] h-[76px] text-5xl flex items-center justify-center' borders='r'>
 								{resource.icon}
 							</Container>
 
