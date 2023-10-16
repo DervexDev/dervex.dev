@@ -1,7 +1,7 @@
 'use client'
 
 import { LiaCopy, LiaCheckSolid, LiaPenSolid, LiaExternalLinkAltSolid } from 'react-icons/lia'
-import { SiDiscord, SiTwitter, SiRobloxstudio } from 'react-icons/si'
+import { SiDiscord, SiX, SiRobloxstudio } from 'react-icons/si'
 import { HiMail } from 'react-icons/hi'
 import { useState } from 'react'
 
@@ -25,10 +25,10 @@ const contacts: Array<Contact> = [
 		icon: <SiDiscord/>
 	},
 	{
-		name: 'Twitter',
-		desc: 'For one-time questions dm me on twitter',
-		link: 'https://twitter.com/messages/compose?recipient_id=1388272049748156416',
-		icon: <SiTwitter/>
+		name: 'X',
+		desc: 'For one-time questions dm me on X',
+		link: 'https://x.com/messages/compose?recipient_id=1388272049748156416',
+		icon: <SiX/>
 	},
 	{
 		name: 'Email',

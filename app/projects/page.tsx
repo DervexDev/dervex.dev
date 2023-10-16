@@ -52,7 +52,7 @@ const projects: Array<Project> = [
 		time: 'August 2023',
 		icon: 'dervex',
 		desc: 'Well, every developer needs their own site, right? So here is mine! As you can see priorates were monochrome color scheme and simplicity. Those mysterious squares close to the GitHub logo are my contribution this year. Try resizing the window to see some magic happen! Also, this page has 100% score in every Google Lighthouse category.',
-		links: ['https://github.com/DervexHero/DervexHero', 'https://dervex.dev/']
+		links: ['https://github.com/DervexHero/DervexWebsite', 'https://dervex.dev/']
 	},
 	{
 		name: 'Universal Comments',

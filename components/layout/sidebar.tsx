@@ -1,5 +1,5 @@
-import { fetchContributions } from '@/modules/github'
-import Container from './container'
+import { fetchContributions } from '@/lib/github'
+import Container from '../container'
 
 export default async function Sidebar() {
 	const contributions = await fetchContributions()

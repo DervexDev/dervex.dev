@@ -1,7 +1,7 @@
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
-import { SiLua, SiGithub } from 'react-icons/si'
+import { SiLua, SiRust, SiGithub } from 'react-icons/si'
 
-import { Wally } from '@/components/icons'
+import { Wally, Cargo } from '@/components/icons'
 import Container from '@/components/container'
 import Tooltip from '@/components/tooltip'
 import Button from '@/components/button'
@@ -14,6 +14,12 @@ interface Resource {
 }
 
 const resources: Array<Resource> = [
+	{
+		name: 'globenv',
+		desc: 'Globally set & read environment variables and paths (not just for the current process) on Windows, macOS or Linux. This Rust package lets you set environment variables easily and edit environment paths safely.',
+		links: ['https://github.com/DervexHero/globenv', 'https://crates.io/crates/globenv'],
+		icon: <SiRust/>
+	},
 	{
 		name: 'Advanced Signal',
 		desc: 'Probably the best implementation of signal class in Roblox as it combines performance and flexibility into one module. You can choose whether you prefer speed or ease of use by changing its config.',
@@ -47,10 +53,20 @@ export default function Resources() {
 						</Tooltip>
 					</Button>
 				)
+			} else if (link.includes('crates')) {
+				return (
+					<Button key={index} className='relative w-full flex items-center justify-center' borders={index == 0 ? '' : 'l'} link={link}>
+						<Cargo className='h-3/5 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black'/>
+
+							<Tooltip>
+								Crates package
+							</Tooltip>
+					</Button>
+				)
 			} else if (link.includes('wally')) {
 				return (
-					<Button key={index} className='relative text-4xl w-full flex items-center justify-center' borders={index == 0 ? '' : 'l'} link={link}>
-						<Wally className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black'/>
+					<Button key={index} className='relative w-full flex items-center justify-center' borders={index == 0 ? '' : 'l'} link={link}>
+						<Wally className='h-3/5 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black'/>
 
 							<Tooltip>
 								Wally package

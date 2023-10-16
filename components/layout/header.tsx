@@ -3,13 +3,13 @@
 import { useState, useEffect } from 'react'
 import { useCollapse } from 'react-collapsed'
 
-import { clamp, countKeys } from '@/modules/utils'
-import { getContributions } from '@/modules/github'
-import { drvx } from '@/modules/ascii'
+import { clamp, countKeys } from '@/lib/utils'
+import { getContributions } from '@/lib/github'
+import { drvx } from '@/lib/ascii'
 
 import HeaderButton, { HeaderButtonType } from './headerButton'
-import Container from './container'
-import Button from './button'
+import Container from '../container'
+import Button from '../button'
 
 const HEADER_BUTTONS: Array<HeaderButtonType> = [
 	{
@@ -33,8 +33,8 @@ const HEADER_BUTTONS: Array<HeaderButtonType> = [
 		text: 'CONTACT'
 	},
 	{
-		link: 'https://twitter.com/DervexHero',
-		icon: 'twitter'
+		link: 'https://x.com/DervexHero',
+		icon: 'x'
 	},
 	{
 		link: 'https://youtube.com/@DervexHero',

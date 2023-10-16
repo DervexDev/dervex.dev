@@ -3,8 +3,8 @@
 import { useState } from 'react'
 import { SiRevolut } from 'react-icons/si'
 
-import { cancelOrder, createOrder, getOrderStatus } from '@/modules/payment'
-import { delay } from '@/modules/utils'
+import { cancelOrder, createOrder, getOrderStatus } from '@/lib/payment'
+import { delay } from '@/lib/utils'
 
 import Container from '@/components/container'
 import Button from '@/components/button'

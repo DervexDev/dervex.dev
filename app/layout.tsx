@@ -3,9 +3,9 @@ import '../styles/globals.css'
 import type { Metadata } from 'next'
 import { Roboto_Mono } from 'next/font/google'
 
-import Header from '@/components/header'
-import Sidebar from '@/components/sidebar'
-import Footer from '@/components/footer'
+import Header from '@/components/layout/header'
+import Sidebar from '@/components/layout/sidebar'
+import Footer from '@/components/layout/footer'
 
 const ROBOTO_MONO = Roboto_Mono({ subsets: ['latin'] })
 

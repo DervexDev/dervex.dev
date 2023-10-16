@@ -1,8 +1,8 @@
-import { SiTwitter, SiYoutube, SiGithub, SiRobloxstudio, SiUnrealengine } from 'react-icons/si'
+import { SiX, SiYoutube, SiGithub, SiRobloxstudio, SiUnrealengine } from 'react-icons/si'
 import { BiError } from 'react-icons/bi'
 
-import { DervexLogo, DervexBanner } from './icons'
-import Button from './button'
+import { DervexLogo, DervexBanner } from '../icons'
+import Button from '../button'
 
 export interface HeaderButtonType {
 	link?: string
@@ -13,8 +13,8 @@ export interface HeaderButtonType {
 
 function iconButton(icon: string) {
 	switch (icon) {
-		case 'twitter':
-			return <SiTwitter/>
+		case 'x':
+			return <SiX/>
 		case 'youtube':
 			return <SiYoutube/>
 		case 'github':
