@@ -55,10 +55,10 @@ const HEADER_BUTTONS: Array<HeaderButtonType> = [
 ]
 const TEXT_BUTTONS = countKeys(HEADER_BUTTONS, 'text')
 
-export default function Header () {
+export default function Header() {
 	const [buttonCount, setButtonCount] = useState(10)
 	const [isExpanded, setIsExpanded] = useState(false)
-	const { getCollapseProps } = useCollapse({isExpanded})
+	const { getCollapseProps } = useCollapse({ isExpanded })
 
 	function header() {
 		let buttons = HEADER_BUTTONS
@@ -67,13 +67,31 @@ export default function Header () {
 			buttons = HEADER_BUTTONS.slice(0, buttonCount - 1)
 
 			buttons.push({
-				button: <Button className='min-w-[76px] border-l-2 flex-col' borders='l' callback={() => {
-					setIsExpanded(!isExpanded)
-				}}>
-					<span className={`bg-black dark:bg-white group-hover:bg-white dark:group-hover:bg-black block duration-200 transition-transform ease-out w-[25px] h-[2px] ${isExpanded ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}/>
-					<span className={`bg-black dark:bg-white group-hover:bg-white dark:group-hover:bg-black block duration-100 transition-opacity ease-out w-[25px] h-[2px] my-0.5 ${isExpanded ? 'opacity-0' : 'opacity-100'}`}/>
-					<span className={`bg-black dark:bg-white group-hover:bg-white dark:group-hover:bg-black block duration-200 transition-transform ease-out w-[25px] h-[2px] ${isExpanded ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}/>
-				</Button>
+				button: (
+					<Button
+						className='min-w-[76px] border-l-2 flex-col'
+						borders='l'
+						callback={() => {
+							setIsExpanded(!isExpanded)
+						}}
+					>
+						<span
+							className={`bg-black dark:bg-white group-hover:bg-white dark:group-hover:bg-black block duration-200 transition-transform ease-out w-[25px] h-[2px] ${
+								isExpanded ? 'rotate-45 translate-y-1' : '-translate-y-0.5'
+							}`}
+						/>
+						<span
+							className={`bg-black dark:bg-white group-hover:bg-white dark:group-hover:bg-black block duration-100 transition-opacity ease-out w-[25px] h-[2px] my-0.5 ${
+								isExpanded ? 'opacity-0' : 'opacity-100'
+							}`}
+						/>
+						<span
+							className={`bg-black dark:bg-white group-hover:bg-white dark:group-hover:bg-black block duration-200 transition-transform ease-out w-[25px] h-[2px] ${
+								isExpanded ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'
+							}`}
+						/>
+					</Button>
+				)
 			})
 		} else if (isExpanded) {
 			setIsExpanded(false)
@@ -88,9 +106,16 @@ export default function Header () {
 		return (
 			<Container className='relative w-full h-[80px] z-20 flex flex-row'>
 				{buttons.map((button, index) => {
-					return <HeaderButton key={index} button={button} borders={index == 0 ? '' : 'l'} callback={() => {
-						setIsExpanded(false)
-					}}/>
+					return (
+						<HeaderButton
+							key={index}
+							button={button}
+							borders={index == 0 ? '' : 'l'}
+							callback={() => {
+								setIsExpanded(false)
+							}}
+						/>
+					)
 				})}
 			</Container>
 		)
@@ -114,10 +139,14 @@ export default function Header () {
 			return
 		} else if (textButtons.length == 0) {
 			return (
-				<Container className='absolute right-0 z-10 w-[78px] duration-300' borders='lrb' style={{marginTop: isExpanded ? 0 : -2}}>
+				<Container
+					className='absolute right-0 z-10 w-[78px] duration-300'
+					borders='lrb'
+					style={{ marginTop: isExpanded ? 0 : -2 }}
+				>
 					<div {...getCollapseProps()}>
 						{buttons.map((button, index) => {
-							return <HeaderButton key={index} button={button} borders={index == 0 ? '' : 't'} compact={true}/>
+							return <HeaderButton key={index} button={button} borders={index == 0 ? '' : 't'} compact={true} />
 						})}
 					</div>
 				</Container>
@@ -126,26 +155,46 @@ export default function Header () {
 			const contributions = getContributions(true)
 
 			return (
-				<Container className='absolute z-10 w-full duration-300' borders='lrb' style={{marginTop: isExpanded ? 0 : -2}}>
+				<Container
+					className='absolute z-10 w-full duration-300'
+					borders='lrb'
+					style={{ marginTop: isExpanded ? 0 : -2 }}
+				>
 					<div {...getCollapseProps()}>
 						<div className='flex flex-row'>
 							<div className='w-[calc(100%-76px)] flex flex-col'>
 								{textButtons.map((button, index) => {
-									return <HeaderButton key={index} className='h-[76px] text-2xl' button={button} borders={'b'} callback={() => {
-										setIsExpanded(false)
-									}}/>
+									return (
+										<HeaderButton
+											key={index}
+											className='h-[76px] text-2xl'
+											button={button}
+											borders={'b'}
+											callback={() => {
+												setIsExpanded(false)
+											}}
+										/>
+									)
 								})}
 
 								<div className='mobileGithubContributions h-[76px] grid grid-rows-5 grid-flow-col content-start overflow-hidden bg-white dark:bg-black'>
 									{contributions.map((contribution, index) => {
-										return <div key={index} className='bg-black w-[15.2px] h-full dark:bg-white aspect-square' style={{opacity: contribution}}/>
+										return (
+											<div
+												key={index}
+												className='bg-black w-[15.2px] h-full dark:bg-white aspect-square'
+												style={{ opacity: contribution }}
+											/>
+										)
 									})}
 								</div>
 							</div>
 
 							<div className='w-[76px]'>
 								{iconButtons.map((button, index) => {
-									return <HeaderButton key={index} button={button} borders={index == iconButtons.length - 1 ? 'l' : 'lb'}/>
+									return (
+										<HeaderButton key={index} button={button} borders={index == iconButtons.length - 1 ? 'l' : 'lb'} />
+									)
 								})}
 							</div>
 						</div>

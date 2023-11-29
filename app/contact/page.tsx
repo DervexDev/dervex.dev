@@ -22,26 +22,26 @@ const contacts: Array<Contact> = [
 		name: 'Discord',
 		desc: 'The best way to get in touch with me',
 		link: 'https://discord.com/invite/maybesomeday',
-		icon: <SiDiscord/>
+		icon: <SiDiscord />
 	},
 	{
 		name: 'X',
 		desc: 'Another great way to contact with me',
 		link: 'https://x.com/DervexHero',
-		icon: <SiX/>
+		icon: <SiX />
 	},
 	{
 		name: 'Email',
 		desc: 'Only for important questions or offers',
 		link: 'mailto:contact@dervex.dev',
-		icon: <HiMail/>
+		icon: <HiMail />
 	},
 	{
 		name: 'DevForum',
 		desc: 'The best alternative for DevForum users',
 		link: 'https://devforum.roblox.com/u/dervex/summary',
-		icon: <SiRobloxstudio/>
-	},
+		icon: <SiRobloxstudio />
+	}
 ]
 
 function copyToClipboard(text: string) {
@@ -59,49 +59,53 @@ export default function Contact() {
 		switch (name) {
 			case 'Discord':
 				return (
-					<Button className='min-w-[78px] h-full text-4xl' borders='l' callback={() => {
-						copyToClipboard('dervexhero')
+					<Button
+						className='min-w-[78px] h-full text-4xl'
+						borders='l'
+						callback={() => {
+							copyToClipboard('dervexhero')
 
-						setCopied(true)
+							setCopied(true)
 
-						setTimeout(() => {
-							setCopied(false)
-						}, 1000);
-					}}>
-						<div className='absolute duration-200 transition-opacity' style={{opacity: !copied ? 100 : 0}}>
-							<LiaCopy/>
+							setTimeout(() => {
+								setCopied(false)
+							}, 1000)
+						}}
+					>
+						<div className='absolute duration-200 transition-opacity' style={{ opacity: !copied ? 100 : 0 }}>
+							<LiaCopy />
 						</div>
 
-						<div className='duration-200 transition-opacity' style={{opacity: copied ? 100 : 0}}>
-							<LiaCheckSolid/>
+						<div className='duration-200 transition-opacity' style={{ opacity: copied ? 100 : 0 }}>
+							<LiaCheckSolid />
 						</div>
 
 						<Tooltip>
-							<p style={{display: !copied ? 'block' : 'none'}}>Copy username</p>
-							<p style={{display: copied ? 'block' : 'none'}}>Copied!</p>
+							<p style={{ display: !copied ? 'block' : 'none' }}>Copy username</p>
+							<p style={{ display: copied ? 'block' : 'none' }}>Copied!</p>
 						</Tooltip>
 					</Button>
 				)
 			case 'Email':
 				return (
-					<a className={ButtonCSS + 'min-w-[78px] h-full text-4xl border-l-2'} href={link} onClick={() => {
-						copyToClipboard(link!.replace('mailto:', ''))
-					}}>
-						<LiaPenSolid/>
+					<a
+						className={ButtonCSS + 'min-w-[78px] h-full text-4xl border-l-2'}
+						href={link}
+						onClick={() => {
+							copyToClipboard(link!.replace('mailto:', ''))
+						}}
+					>
+						<LiaPenSolid />
 
-						<Tooltip>
-							Write email
-						</Tooltip>
+						<Tooltip>Write email</Tooltip>
 					</a>
 				)
 			default:
 				return (
 					<Button className='min-w-[78px] h-full text-4xl' borders='l' link={link}>
-						<LiaExternalLinkAltSolid/>
+						<LiaExternalLinkAltSolid />
 
-						<Tooltip>
-							Open {name}
-						</Tooltip>
+						<Tooltip>Open {name}</Tooltip>
 					</Button>
 				)
 		}
@@ -113,7 +117,12 @@ export default function Contact() {
 				return (
 					<Container key={index} className='w-[350px] h-[160px] md:w-[400px] m-[20px]'>
 						<Container className='h-1/2 flex flex-row' borders='b'>
-							<Container className={`min-w-[76px] h-full text-${contact.name != 'Email' ? 3 : 4}xl flex items-center justify-center`} borders='r'>
+							<Container
+								className={`min-w-[76px] h-full text-${
+									contact.name != 'Email' ? 3 : 4
+								}xl flex items-center justify-center`}
+								borders='r'
+							>
 								{contact.icon}
 							</Container>
 
@@ -123,9 +132,7 @@ export default function Contact() {
 						</Container>
 
 						<div className='h-1/2 flex flex-row'>
-							<div className='w-full h-full px-4 flex items-center justify-center'>
-								{contact.desc}
-							</div>
+							<div className='w-full h-full px-4 flex items-center justify-center'>{contact.desc}</div>
 
 							{button(contact.name, contact.link)}
 						</div>

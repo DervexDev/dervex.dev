@@ -16,28 +16,40 @@ interface Resource {
 const resources: Array<Resource> = [
 	{
 		name: 'globenv',
-		desc: 'Globally set & read environment variables and paths (not just for the current process) on Windows, macOS or Linux. This Rust package lets you set environment variables easily and edit environment paths safely.',
+		desc:
+			'Globally set & read environment variables and paths (not just for the current process) on Windows, macOS or Linux. This Rust package lets you set environment variables easily and edit environment paths safely.',
 		links: ['https://github.com/DervexHero/globenv', 'https://crates.io/crates/globenv'],
-		icon: <SiRust/>
+		icon: <SiRust />
 	},
 	{
 		name: 'Advanced Signal',
-		desc: 'Probably the best implementation of signal class in Roblox as it combines performance and flexibility into one module. You can choose whether you prefer speed or ease of use by changing its config.',
+		desc:
+			'Probably the best implementation of signal class in Roblox as it combines performance and flexibility into one module. You can choose whether you prefer speed or ease of use by changing its config.',
 		links: ['https://github.com/DervexHero/AdvancedSignal', 'https://wally.run/package/dervexhero/advancedsignal'],
-		icon: <SiLua/>
+		icon: <SiLua />
 	},
 	{
 		name: 'Advanced Spring',
-		desc: 'This implementation of spring class supports every major Roblox and Luau datatype as well as auto running in separate thread. It’s very easy to use and customizable via constructor or global config.',
+		desc:
+			'This implementation of spring class supports every major Roblox and Luau datatype as well as auto running in separate thread. It’s very easy to use and customizable via constructor or global config.',
 		links: ['https://github.com/DervexHero/AdvancedSpring', 'https://wally.run/package/dervexhero/advancedspring'],
-		icon: <SiLua/>
+		icon: <SiLua />
 	},
 	{
 		name: 'Lua Sorting Algorithms',
-		desc: <>Implementation of over 20 sorting algorithms in Lua and Luau. All algorithms have been ported from Python which can be found on <a href='https://www.geeksforgeeks.org/sorting-algorithms/' className='underline hover:no-underline'>GeeksforGeeks</a> site. Every file is ready to use module that can be imported.</>,
+		desc: (
+			<>
+				Implementation of over 20 sorting algorithms in Lua and Luau. All algorithms have been ported from Python which
+				can be found on{' '}
+				<a href='https://www.geeksforgeeks.org/sorting-algorithms/' className='underline hover:no-underline'>
+					GeeksforGeeks
+				</a>{' '}
+				site. Every file is ready to use module that can be imported.
+			</>
+		),
 		links: ['https://github.com/DervexHero/LuaSortingAlgorithms'],
-		icon: <SiLua/>
-	},
+		icon: <SiLua />
+	}
 ]
 
 export default function Resources() {
@@ -45,42 +57,54 @@ export default function Resources() {
 		return links.map((link, index) => {
 			if (link.includes('github')) {
 				return (
-					<Button key={index} className='relative text-4xl w-full flex items-center justify-center' borders={index == 0 ? '' : 'l'} link={link}>
-						<SiGithub/>
+					<Button
+						key={index}
+						className='relative text-4xl w-full flex items-center justify-center'
+						borders={index == 0 ? '' : 'l'}
+						link={link}
+					>
+						<SiGithub />
 
-						<Tooltip>
-							GitHub repo
-						</Tooltip>
+						<Tooltip>GitHub repo</Tooltip>
 					</Button>
 				)
 			} else if (link.includes('crates')) {
 				return (
-					<Button key={index} className='relative w-full flex items-center justify-center' borders={index == 0 ? '' : 'l'} link={link}>
-						<Cargo className='h-3/5 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black'/>
+					<Button
+						key={index}
+						className='relative w-full flex items-center justify-center'
+						borders={index == 0 ? '' : 'l'}
+						link={link}
+					>
+						<Cargo className='h-3/5 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black' />
 
-							<Tooltip>
-								Crates package
-							</Tooltip>
+						<Tooltip>Crates package</Tooltip>
 					</Button>
 				)
 			} else if (link.includes('wally')) {
 				return (
-					<Button key={index} className='relative w-full flex items-center justify-center' borders={index == 0 ? '' : 'l'} link={link}>
-						<Wally className='h-3/5 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black'/>
+					<Button
+						key={index}
+						className='relative w-full flex items-center justify-center'
+						borders={index == 0 ? '' : 'l'}
+						link={link}
+					>
+						<Wally className='h-3/5 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black' />
 
-							<Tooltip>
-								Wally package
-							</Tooltip>
+						<Tooltip>Wally package</Tooltip>
 					</Button>
 				)
 			} else {
 				return (
-					<Button key={index} className='relative text-4xl w-full flex items-center justify-center' borders={index == 0 ? '' : 'l'} link={link}>
-						<LiaExternalLinkAltSolid/>
+					<Button
+						key={index}
+						className='relative text-4xl w-full flex items-center justify-center'
+						borders={index == 0 ? '' : 'l'}
+						link={link}
+					>
+						<LiaExternalLinkAltSolid />
 
-						<Tooltip>
-							Resource website
-						</Tooltip>
+						<Tooltip>Resource website</Tooltip>
 					</Button>
 				)
 			}
@@ -102,9 +126,7 @@ export default function Resources() {
 							</div>
 						</Container>
 
-						<p className='px-4 py-2 text-justify'>
-							{resource.desc}
-						</p>
+						<p className='px-4 py-2 text-justify'>{resource.desc}</p>
 
 						<Container className='h-[78px] flex flex-row' borders='t'>
 							{buttons(resource.links)}

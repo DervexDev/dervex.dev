@@ -54,7 +54,7 @@ export default function PayMe() {
 
 				const newWindow = window.open(checkout)
 
-				if (!newWindow || newWindow.closed || typeof newWindow.closed=='undefined') {
+				if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
 					window.open(checkout, '_self')
 				}
 
@@ -86,7 +86,7 @@ export default function PayMe() {
 		<Container className='relative w-[80%] max-w-[500px]'>
 			<Container className='h-[78px] flex flex-row' borders='b'>
 				<Container className='min-w-[76px] h-[76px] text-4xl flex items-center justify-center' borders='r'>
-					{<SiRevolut/>}
+					{<SiRevolut />}
 				</Container>
 
 				<div className='relative w-full flex items-center justify-center'>
@@ -95,45 +95,69 @@ export default function PayMe() {
 			</Container>
 
 			<Container className='w-full h-[200px]' borders='b'>
-				<Input className='w-full h-full px-4 py-4' placeholder='Add note (optional)' value={note} callback={(event) => {
-					let value = event.target.value
-					value = value.substring(0, 300)
-					updateNote(value)
-				}}/>
+				<Input
+					className='w-full h-full px-4 py-4'
+					placeholder='Add note (optional)'
+					value={note}
+					callback={event => {
+						let value = event.target.value
+						value = value.substring(0, 300)
+						updateNote(value)
+					}}
+				/>
 			</Container>
 
 			<Container className='h-[76px] flex flex-row' borders=''>
 				<div className='w-[150px] h-full flex items-center'>
-					<Input className='w-[calc(100%-30px)] h-full text-4xl pl-4 pt-[18px]' placeholder='0' value={amount} callback={(event) => {
-						let value = event.target.value
-						value = value.replace(/\D/g, '')
-						value = value.substring(0, 4)
-						updateAmount(value)
-					}}/>
+					<Input
+						className='w-[calc(100%-30px)] h-full text-4xl pl-4 pt-[18px]'
+						placeholder='0'
+						value={amount}
+						callback={event => {
+							let value = event.target.value
+							value = value.replace(/\D/g, '')
+							value = value.substring(0, 4)
+							updateAmount(value)
+						}}
+					/>
 					<p className={`text-4xl ${amount == '' ? 'text-gray-400' : ''}`}>$</p>
 				</div>
 
-				<Button className='w-[calc(100%-150px)] text-4xl font-bold' borders='l' callback={() => {
-					processPayment()
-				}}>
+				<Button
+					className='w-[calc(100%-150px)] text-4xl font-bold'
+					borders='l'
+					callback={() => {
+						processPayment()
+					}}
+				>
 					PAY
 				</Button>
 			</Container>
 
-			<div className={`absolute inset-0 w-full bg-white dark:bg-black duration-${notification == 0 ? 100 : 200} overflow-hidden flex items-center justify-center`} style={{height: notification == 0 ? '0%' : '100%'}}>
+			<div
+				className={`absolute inset-0 w-full bg-white dark:bg-black duration-${
+					notification == 0 ? 100 : 200
+				} overflow-hidden flex items-center justify-center`}
+				style={{ height: notification == 0 ? '0%' : '100%' }}
+			>
 				<div className='w-[80%] h-[60%] flex flex-wrap justify-center'>
 					<p className='w-full text-3xl text-center self-center'>{notifications[notification].text}</p>
 
-					<Button className={`w-1/2 h-[50px] self-center duration-100 transition-opacity opacity-${notification == 0 ? 0 : 100}`} callback={() => {
-						if (notification == 3) {
-							processPayment(true)
-						} else if (notification == 4) {
-							window.open('/', '_self')
-							return
-						}
+					<Button
+						className={`w-1/2 h-[50px] self-center duration-100 transition-opacity opacity-${
+							notification == 0 ? 0 : 100
+						}`}
+						callback={() => {
+							if (notification == 3) {
+								processPayment(true)
+							} else if (notification == 4) {
+								window.open('/', '_self')
+								return
+							}
 
-						showNotification(0)
-					}}>
+							showNotification(0)
+						}}
+					>
 						{notifications[notification].button}
 					</Button>
 				</div>

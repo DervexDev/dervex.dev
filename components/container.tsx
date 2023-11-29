@@ -5,10 +5,10 @@ interface Props {
 	style?: React.CSSProperties
 }
 
-export default function Container({children, className, borders, style}: Props) {
-	let css = 'bg-white dark:bg-black border-black dark:border-white '	
+export default function Container({ children, className, borders, style }: Props) {
+	let css = 'bg-white dark:bg-black border-black dark:border-white '
 
-	if (className) {		
+	if (className) {
 		css += className
 	}
 
@@ -29,7 +29,9 @@ export default function Container({children, className, borders, style}: Props) 
 		css += ' border-2'
 	}
 
-	return <div className={css} style={style}>
-		{children}
-	</div>
+	return (
+		<div className={css} style={style}>
+			{children}
+		</div>
+	)
 }

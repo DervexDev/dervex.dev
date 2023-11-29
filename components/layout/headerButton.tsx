@@ -14,33 +14,53 @@ export interface HeaderButtonType {
 function iconButton(icon: string) {
 	switch (icon) {
 		case 'x':
-			return <SiX/>
+			return <SiX />
 		case 'youtube':
-			return <SiYoutube/>
+			return <SiYoutube />
 		case 'github':
-			return <SiGithub/>
+			return <SiGithub />
 		case 'roblox':
-			return <SiRobloxstudio/>
+			return <SiRobloxstudio />
 		case 'unreal':
-			return <SiUnrealengine/>
+			return <SiUnrealengine />
 		case 'logo':
-			return <DervexLogo className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black'/>
+			return (
+				<DervexLogo className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black' />
+			)
 		case 'banner':
-			return <DervexBanner className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black'/>
+			return (
+				<DervexBanner className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black' />
+			)
 		default:
-			return <BiError/>
+			return <BiError />
 	}
 }
 
-function textButton(text: string) {	
+function textButton(text: string) {
 	return <b>{text}</b>
 }
 
-export default function HeaderButton({className, button, callback, borders, compact}: {className?: string, button: HeaderButtonType, callback?: () => undefined, borders: string, compact?: boolean}) {
+export default function HeaderButton({
+	className,
+	button,
+	callback,
+	borders,
+	compact
+}: {
+	className?: string
+	button: HeaderButtonType
+	callback?: () => undefined
+	borders: string
+	compact?: boolean
+}) {
 	if (!className) {
-		className = button.icon ? (button.icon != 'banner' ? `${compact ? 'min-w-[74px]' : 'min-w-[76px]'} min-h-[76px] text-3xl` : 'w-full') : 'w-full text-xl md:text-2xl'
+		className = button.icon
+			? button.icon != 'banner'
+				? `${compact ? 'min-w-[74px]' : 'min-w-[76px]'} min-h-[76px] text-3xl`
+				: 'w-full'
+			: 'w-full text-xl md:text-2xl'
 	}
-	
+
 	if (button.link) {
 		return (
 			<Button className={className} link={button.link} label={button.icon} borders={borders} callback={callback}>
