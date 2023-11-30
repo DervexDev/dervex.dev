@@ -16,18 +16,14 @@ import {
 	SiVisualstudiocode,
 	SiXcode,
 	SiRobloxstudio,
-	SiRoblox,
-	SiGithub,
-	SiMicrosoft
 } from 'react-icons/si'
-import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 import { BiError } from 'react-icons/bi'
 
 import Container from '@/components/container'
-import Tooltip from '@/components/tooltip'
-import Button from '@/components/button'
+import Link from '@/components/link'
 
 import Image from 'next/image'
+import { IconType } from 'react-icons'
 
 interface Project {
 	name: string
@@ -44,15 +40,14 @@ const projects: Array<Project> = [
 		technologies: ['js', 'lua', 'cpp', 'node', 'vsc', 'roblox', 'git'],
 		time: 'October 2022 - now',
 		icon: 'argon',
-		desc:
-			'Visual Studio Code extension and Roblox plugin. Argon allows for two-way sync of code or any instance between game engine and code editor. It’s very simple to use so it’s accessible even for beginners and comes with many useful built-in tools. It will fit everyone’s needs as it’s highly customizable.',
+		desc: 'Visual Studio Code extension and Roblox plugin. Argon allows for two-way sync of code or any instance between game engine and code editor. It’s very simple to use so it’s accessible even for beginners and comes with many useful built-in tools. It will fit everyone’s needs as it’s highly customizable.',
 		links: [
 			'https://github.com/argon-rbx/argon',
 			'https://marketplace.visualstudio.com/items?itemName=Dervex.argon',
 			'https://create.roblox.com/marketplace/asset/11263738833/',
 			'https://devforum.roblox.com/t/2021776',
-			'https://argonstatsapi.web.app/'
-		]
+			'https://argonstatsapi.web.app/',
+		],
 	},
 	{
 		name: 'LUNO',
@@ -66,7 +61,7 @@ const projects: Array<Project> = [
 				there is no need to set up any additional stuff.
 			</>
 		),
-		links: ['https://github.com/DervexHero/luno', 'https://marketplace.visualstudio.com/items?itemName=Dervex.luno']
+		links: ['https://github.com/DervexHero/luno', 'https://marketplace.visualstudio.com/items?itemName=Dervex.luno'],
 	},
 	{
 		name: 'Spotify SA',
@@ -87,220 +82,92 @@ const projects: Array<Project> = [
 				thus SSA simply creates new hidden window and switches playback to web player.
 			</>
 		),
-		links: ['https://github.com/DervexHero/SpotifySpatialAudio']
+		links: ['https://github.com/DervexHero/SpotifySpatialAudio'],
 	},
 	{
 		name: 'This page',
 		technologies: ['ts', 'tailwind', 'react', 'next', 'vercel', 'node'],
 		time: 'August 2023',
 		icon: 'dervex',
-		desc:
-			'Well, every developer needs their own site, right? So here is mine! As you can see priorates were monochrome color scheme and simplicity. Those mysterious squares close to the GitHub logo are my contribution this year. Try resizing the window to see some magic happen! Also, this page has 100% score in every Google Lighthouse category.',
-		links: ['https://github.com/DervexHero/dervex.dev', 'https://dervex.dev/']
+		desc: 'Well, every developer needs their own site, right? So here is mine! As you can see priorates were monochrome color scheme and simplicity. Those mysterious squares close to the GitHub logo are my contribution this year. Try resizing the window to see some magic happen! Also, this page has 100% score in every Google Lighthouse category.',
+		links: ['https://github.com/DervexHero/dervex.dev', 'https://dervex.dev/'],
 	},
 	{
 		name: 'Universal Comments',
 		technologies: ['ts', 'vsc'],
 		time: 'January 2023',
 		icon: 'universalComments',
-		desc:
-			'Simple Visual Studio Code extension that allows you to use same comment characters in every major language. It also allows to customize your experience by auto closing comment block or by adding spaces automatically.',
+		desc: 'Simple Visual Studio Code extension that allows you to use same comment characters in every major language. It also allows to customize your experience by auto closing comment block or by adding spaces automatically.',
 		links: [
 			'https://github.com/DervexHero/UniversalComments',
-			'https://marketplace.visualstudio.com/items?itemName=Dervex.universal-comments'
-		]
+			'https://marketplace.visualstudio.com/items?itemName=Dervex.universal-comments',
+		],
 	},
 	{
 		name: 'Helium',
 		technologies: ['lua', 'roblox'],
 		time: 'January 2023',
 		icon: 'helium',
-		desc:
-			'Lightweight Roblox Studio plugin for camera bookmarks. It’s exact replica of Unreal Engine’s camera checkpoints. It allows you to save up to 10 camera location and then teleport to them either by keyboard shortcut or using UI.',
-		links: ['https://github.com/DervexHero/Helium', 'https://create.roblox.com/marketplace/asset/12243834454/']
-	}
+		desc: 'Lightweight Roblox Studio plugin for camera bookmarks. It’s exact replica of Unreal Engine’s camera checkpoints. It allows you to save up to 10 camera location and then teleport to them either by keyboard shortcut or using UI.',
+		links: ['https://github.com/DervexHero/Helium', 'https://create.roblox.com/marketplace/asset/12243834454/'],
+	},
 ]
 
 export default function Projects() {
 	function technologies(technologies: Array<string>) {
+		function div(index: number, icon: JSX.Element) {
+			return (
+				<div key={index} className='pl-2'>
+					{icon}
+				</div>
+			)
+		}
+
 		return technologies.map((technology, index) => {
 			switch (technology) {
 				case 'lua':
-					return (
-						<div key={index} className='pl-2'>
-							<SiLua />
-						</div>
-					)
+					return div(index, <SiLua />)
 				case 'ts':
-					return (
-						<div key={index} className='pl-2'>
-							<SiTypescript />
-						</div>
-					)
+					return div(index, <SiTypescript />)
 				case 'js':
-					return (
-						<div key={index} className='pl-2'>
-							<SiJavascript />
-						</div>
-					)
+					return div(index, <SiJavascript />)
 				case 'cpp':
-					return (
-						<div key={index} className='pl-2'>
-							<SiCplusplus />
-						</div>
-					)
+					return div(index, <SiCplusplus />)
 				case 'swift':
-					return (
-						<div key={index} className='pl-2'>
-							<SiSwift />
-						</div>
-					)
+					return div(index, <SiSwift />)
 				case 'docker':
-					return (
-						<div key={index} className='pl-2'>
-							<SiDocker />
-						</div>
-					)
+					return div(index, <SiDocker />)
 				case 'tailwind':
-					return (
-						<div key={index} className='pl-2'>
-							<SiTailwindcss />
-						</div>
-					)
+					return div(index, <SiTailwindcss />)
 				case 'node':
-					return (
-						<div key={index} className='pl-2'>
-							<SiNodedotjs />
-						</div>
-					)
+					return div(index, <SiNodedotjs />)
 				case 'react':
-					return (
-						<div key={index} className='pl-2'>
-							<SiReact />
-						</div>
-					)
+					return div(index, <SiReact />)
 				case 'next':
-					return (
-						<div key={index} className='pl-2'>
-							<SiNextdotjs />
-						</div>
-					)
+					return div(index, <SiNextdotjs />)
 				case 'vercel':
-					return (
-						<div key={index} className='pl-2'>
-							<SiVercel />
-						</div>
-					)
+					return div(index, <SiVercel />)
 				case 'vapor':
-					return (
-						<div key={index} className='pl-2'>
-							<SiVapor />
-						</div>
-					)
+					return div(index, <SiVapor />)
 				case 'spotify':
-					return (
-						<div key={index} className='pl-2'>
-							<SiSpotify />
-						</div>
-					)
+					return div(index, <SiSpotify />)
 				case 'git':
-					return (
-						<div key={index} className='pl-2'>
-							<SiGit />
-						</div>
-					)
+					return div(index, <SiGit />)
 				case 'vsc':
-					return (
-						<div key={index} className='pl-2'>
-							<SiVisualstudiocode />
-						</div>
-					)
+					return div(index, <SiVisualstudiocode />)
 				case 'xcode':
-					return (
-						<div key={index} className='pl-2'>
-							<SiXcode />
-						</div>
-					)
+					return div(index, <SiXcode />)
 				case 'roblox':
-					return (
-						<div key={index} className='pl-2'>
-							<SiRobloxstudio />
-						</div>
-					)
+					return div(index, <SiRobloxstudio />)
 				default:
-					return <BiError key={index} />
+					return div(index, <BiError />)
 			}
 		})
 	}
 
 	function buttons(links: Array<string>) {
 		return links.map((link, index) => {
-			if (link.includes('github')) {
-				return (
-					<Button
-						key={index}
-						className='text-4xl w-full flex items-center justify-center'
-						borders={index == 0 ? '' : 'l'}
-						link={link}
-					>
-						<SiGithub />
-
-						<Tooltip>GitHub repo</Tooltip>
-					</Button>
-				)
-			} else if (link.includes('visualstudio')) {
-				return (
-					<Button
-						key={index}
-						className='text-4xl w-full flex items-center justify-center'
-						borders={index == 0 ? '' : 'l'}
-						link={link}
-					>
-						<SiMicrosoft />
-
-						<Tooltip>VS marketplace</Tooltip>
-					</Button>
-				)
-			} else if (link.includes('devforum')) {
-				return (
-					<Button
-						key={index}
-						className='text-4xl w-full flex items-center justify-center'
-						borders={index == 0 ? '' : 'l'}
-						link={link}
-					>
-						<SiRobloxstudio />
-
-						<Tooltip>DevForum topic</Tooltip>
-					</Button>
-				)
-			} else if (link.includes('roblox')) {
-				return (
-					<Button
-						key={index}
-						className='text-4xl w-full flex items-center justify-center'
-						borders={index == 0 ? '' : 'l'}
-						link={link}
-					>
-						<SiRoblox />
-
-						<Tooltip>Roblox marketplace</Tooltip>
-					</Button>
-				)
-			} else {
-				return (
-					<Button
-						key={index}
-						className='text-4xl w-full flex items-center justify-center'
-						borders={index == 0 ? '' : 'l'}
-						link={link}
-					>
-						<LiaExternalLinkAltSolid />
-
-						<Tooltip>Project website</Tooltip>
-					</Button>
-				)
-			}
+			return <Link key={index} index={index} link={link} external='Project website' />
 		})
 	}
 
