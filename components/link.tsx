@@ -11,15 +11,11 @@ interface Props {
 	index: number
 }
 
-function linkButton(icon: JSX.Element, tooltip: string, link: string, index: number, custom?: boolean) {
+function linkButton(icon: JSX.Element, tooltip: string, link: string, index: number) {
 	return (
 		<Button
 			key={index}
-			className={
-				custom
-					? 'h-3/5 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black'
-					: 'text-4xl w-full flex items-center justify-center'
-			}
+			className='text-4xl w-full flex items-center justify-center'
 			borders={index == 0 ? '' : 'l'}
 			link={link}
 		>
@@ -34,9 +30,9 @@ export default function Link({ link, external, index }: Props) {
 	if (link.includes('github')) {
 		return linkButton(<SiGithub />, 'GitHub repo', link, index)
 	} else if (link.includes('crates')) {
-		return linkButton(<Cargo />, 'Crates package', link, index)
+		return linkButton(<Cargo className='h-3/5' />, 'Crates package', link, index)
 	} else if (link.includes('wally')) {
-		return linkButton(<Wally />, 'Wally package', link, index)
+		return linkButton(<Wally className='h-3/5' />, 'Wally package', link, index)
 	} else if (link.includes('visualstudio')) {
 		return linkButton(<SiMicrosoft />, 'VS marketplace', link, index)
 	} else if (link.includes('devforum')) {

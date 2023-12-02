@@ -28,7 +28,7 @@ function getDummyData(length?: number): Array<number> {
 	const data: Array<number> = []
 
 	for (let i = 0; i < length; i++) {
-		data.push(Math.random())	
+		data.push(Math.random())
 	}
 
 	return data
@@ -62,15 +62,15 @@ export async function fetchContributions(mobile?: boolean): Promise<Array<number
 	const response: any = await fetch('https://api.github.com/graphql', {
 		method: 'POST',
 		headers: {
-			Authorization: `Bearer ${TOKEN}`
+			Authorization: `Bearer ${TOKEN}`,
 		},
 		body: JSON.stringify({
 			query: QUERY,
-			variables: VARIABLES
+			variables: VARIABLES,
 		}),
 		next: {
-			revalidate: 600
-		}
+			revalidate: 600,
+		},
 	}).catch(() => {
 		return null
 	})
@@ -85,7 +85,15 @@ export async function fetchContributions(mobile?: boolean): Promise<Array<number
 		return getData(mobile)
 	}
 
-	const {data: {user: {contributionsCollection: {contributionCalendar: {_, weeks}}}}} = json
+	const {
+		data: {
+			user: {
+				contributionsCollection: {
+					contributionCalendar: { _, weeks },
+				},
+			},
+		},
+	} = json
 	const data: Array<number> = []
 	let max = 0
 

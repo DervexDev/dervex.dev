@@ -12,18 +12,18 @@ export async function createOrder(amount: string, note: string): Promise<Array<s
 		headers: {
 			'Content-Type': 'application/json',
 			Accept: 'application/json',
-			Authorization: `Bearer ${TOKEN}`
+			Authorization: `Bearer ${TOKEN}`,
 		},
 		body: JSON.stringify({
 			currency: 'USD',
 			amount: Number(amount) * 100,
-			description: note != '' ? note : undefined
-		})
+			description: note != '' ? note : undefined,
+		}),
 	}).catch(() => {
 		return [undefined, undefined]
 	})
 
-	response = await response.json()	
+	response = await response.json()
 
 	return [response.checkout_url || 'error', response.id || 'error']
 }
@@ -37,8 +37,8 @@ export async function cancelOrder(id: string) {
 		method: 'POST',
 		headers: {
 			Accept: 'application/json',
-			Authorization: `Bearer ${TOKEN}`
-		}
+			Authorization: `Bearer ${TOKEN}`,
+		},
 	}).catch(() => {})
 }
 
@@ -52,8 +52,8 @@ export async function getOrderStatus(id: string): Promise<string | undefined> {
 		cache: 'no-cache',
 		headers: {
 			Accept: 'application/json',
-			Authorization: `Bearer ${TOKEN}`
-		}
+			Authorization: `Bearer ${TOKEN}`,
+		},
 	}).catch(() => {
 		return
 	})
