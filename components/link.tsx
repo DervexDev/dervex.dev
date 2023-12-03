@@ -1,4 +1,4 @@
-import { SiGithub, SiMicrosoft, SiRoblox, SiRobloxstudio } from 'react-icons/si'
+import { SiGithub, SiMicrosoft, SiRoblox, SiRobloxstudio, SiNpm } from 'react-icons/si'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 
 import { Cargo, Wally } from './icons'
@@ -29,6 +29,8 @@ function linkButton(icon: JSX.Element, tooltip: string, link: string, index: num
 export default function Link({ link, external, index }: Props) {
 	if (link.includes('github')) {
 		return linkButton(<SiGithub />, 'GitHub repo', link, index)
+	} else if (link.includes('npm')) {
+		return linkButton(<SiNpm />, 'npm package', link, index)
 	} else if (link.includes('crates')) {
 		return linkButton(<Cargo className='h-3/5' />, 'Crates package', link, index)
 	} else if (link.includes('wally')) {

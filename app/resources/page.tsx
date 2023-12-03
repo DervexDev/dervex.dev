@@ -1,10 +1,6 @@
-import { LiaExternalLinkAltSolid } from 'react-icons/lia'
-import { SiLua, SiRust, SiGithub } from 'react-icons/si'
+import { SiLua, SiRust, SiTypescript } from 'react-icons/si'
 
-import { Wally, Cargo } from '@/components/icons'
 import Container from '@/components/container'
-import Tooltip from '@/components/tooltip'
-import Button from '@/components/button'
 import Link from '@/components/link'
 
 interface Resource {
@@ -15,6 +11,12 @@ interface Resource {
 }
 
 const resources: Array<Resource> = [
+	{
+		name: 'svg-to-tsx',
+		desc: 'Minify and convert all your SVG files to React components (single TypeScript or JavaScript module). This package was specially made for this website to improve optimization even more.',
+		links: ['https://github.com/DervexHero/svg-to-tsx', 'https://www.npmjs.com/package/svg-to-tsx'],
+		icon: <SiTypescript />,
+	},
 	{
 		name: 'globenv',
 		desc: 'Globally set & read environment variables and paths (not just for the current process) on Windows, macOS or Linux. This Rust package lets you set environment variables easily and edit environment paths safely.',

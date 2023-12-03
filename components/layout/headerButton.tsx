@@ -1,7 +1,7 @@
 import { SiX, SiYoutube, SiGithub, SiRobloxstudio, SiUnrealengine } from 'react-icons/si'
 import { BiError } from 'react-icons/bi'
 
-import { DervexLogo, DervexBanner } from '../icons'
+import { Dervex, DervexBanner } from '../icons'
 import Button from '../button'
 
 export interface HeaderButtonType {
@@ -24,9 +24,7 @@ function iconButton(icon: string) {
 		case 'unreal':
 			return <SiUnrealengine />
 		case 'logo':
-			return (
-				<DervexLogo className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black' />
-			)
+			return <Dervex className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black' />
 		case 'banner':
 			return (
 				<DervexBanner className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black' />
@@ -45,7 +43,7 @@ export default function HeaderButton({
 	button,
 	callback,
 	borders,
-	compact
+	compact,
 }: {
 	className?: string
 	button: HeaderButtonType

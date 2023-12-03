@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "test": "next build && next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "icons": "svg-to-tsx -i ./public/icons -o ./components"
   },
   "dependencies": {
     "@revolut/checkout": "^1.1.16",
@@ -25,6 +26,7 @@
     "react-icons": "^4.11.0",
     "serve": "^14.2.1",
     "sharp": "^0.32.4",
+    "svg-to-tsx": "^0.1.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6",
     "typewriter-effect": "^2.20.1"
