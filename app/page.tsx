@@ -14,9 +14,9 @@ export default function Home() {
 				<Typewriter
 					options={{
 						cursor: '_',
-						loop: true
+						loop: true,
 					}}
-					onInit={typewriter => {
+					onInit={(typewriter) => {
 						typewriter
 							.typeString('Dervex')
 							.pauseFor(2000)
@@ -33,8 +33,8 @@ export default function Home() {
 			<p className='text-[20px] sm:text-[30px] lg:text-[40px] xl:text-[50px] font-bold sm:font-normal'>and I’m</p>
 
 			<p className='w-[95%] sm:w-[85%] lg:w-[75%] xl:w-[65%] pb-[20px]'>
-				Software Engineer, Game Developer, UI/UX & Graphic Designer, 3D Artist and Music Producer based in Poland ready
-				to learn more and collaborate with others.
+				Software Engineer, Game Developer, UI/UX & Graphic Designer, 3D Artist and Music Producer based in Poland
+				willing to learn more and collaborate with you.
 			</p>
 
 			<div className='flex justify-center sm:justify-normal'>

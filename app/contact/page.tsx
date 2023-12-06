@@ -22,26 +22,26 @@ const contacts: Array<Contact> = [
 		name: 'Discord',
 		desc: 'The best way to get in touch with me',
 		link: 'https://discord.com/invite/maybesomeday',
-		icon: <SiDiscord />
+		icon: <SiDiscord />,
 	},
 	{
 		name: 'X',
 		desc: 'Another great way to contact with me',
 		link: 'https://x.com/DervexHero',
-		icon: <SiX />
+		icon: <SiX />,
 	},
 	{
 		name: 'Email',
 		desc: 'Only for important questions or offers',
 		link: 'mailto:contact@dervex.dev',
-		icon: <HiMail />
+		icon: <HiMail />,
 	},
 	{
 		name: 'DevForum',
 		desc: 'The best alternative for DevForum users',
 		link: 'https://devforum.roblox.com/u/dervex/summary',
-		icon: <SiRobloxstudio />
-	}
+		icon: <SiRobloxstudio />,
+	},
 ]
 
 function copyToClipboard(text: string) {
@@ -118,9 +118,11 @@ export default function Contact() {
 					<Container key={index} className='w-[350px] h-[160px] md:w-[400px] m-[20px]'>
 						<Container className='h-1/2 flex flex-row' borders='b'>
 							<Container
-								className={`min-w-[76px] h-full text-${
-									contact.name != 'Email' ? 3 : 4
-								}xl flex items-center justify-center`}
+								className={
+									contact.name != 'Email'
+										? 'min-w-[76px] h-full text-[2.75rem] flex items-center justify-center'
+										: 'min-w-[76px] h-full text-[3.4rem] flex items-center justify-center'
+								}
 								borders='r'
 							>
 								{contact.icon}

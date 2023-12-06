@@ -16,6 +16,7 @@ import {
 	SiVisualstudiocode,
 	SiXcode,
 	SiRobloxstudio,
+	SiRust,
 } from 'react-icons/si'
 import { BiError } from 'react-icons/bi'
 
@@ -36,7 +37,7 @@ interface Project {
 const projects: Array<Project> = [
 	{
 		name: 'Argon',
-		technologies: ['js', 'lua', 'cpp', 'node', 'vsc', 'roblox', 'git'],
+		technologies: ['rust', 'js', 'lua', 'cpp', 'node', 'vsc', 'roblox', 'git'],
 		time: 'October 2022 - now',
 		icon: Argon,
 		desc: 'Visual Studio Code extension and Roblox plugin. Argon allows for two-way sync of code or any instance between game engine and code editor. It’s very simple to use so it’s accessible even for beginners and comes with many useful built-in tools. It will fit everyone’s needs as it’s highly customizable.',
@@ -124,6 +125,8 @@ export default function Projects() {
 
 		return technologies.map((technology, index) => {
 			switch (technology) {
+				case 'rust':
+					return div(index, <SiRust />)
 				case 'lua':
 					return div(index, <SiLua />)
 				case 'ts':
@@ -181,7 +184,7 @@ export default function Projects() {
 						<Container key={index} className='w-[600px] m-[20px] self-center'>
 							<Container className='h-[78px] flex flex-row' borders='b'>
 								<Container className='min-w-[76px] h-full flex items-center justify-center' borders='r'>
-									<project.icon className='h-2/3 fill-black dark:fill-white' />
+									<project.icon className='h-3/4 fill-black dark:fill-white' />
 								</Container>
 
 								<div className='relative w-full h-full flex items-center justify-center sm:block sm:pl-2 sm:pt-1'>
