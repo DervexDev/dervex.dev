@@ -23,6 +23,7 @@ import { BiError } from 'react-icons/bi'
 import { Argon, Dervex, Helium, Luno, SpotifySpatialAudio, UniversalComments } from '@/components/icons'
 
 import Container from '@/components/container'
+import LinkButton from '@/components/linkButton'
 import Link from '@/components/link'
 
 interface Project {
@@ -72,12 +73,9 @@ const projects: Array<Project> = [
 			<>
 				Spotify Spatial Audio is simple macOS app that takes advantage of Spotify’s web API to make use of spatial audio
 				on your{' '}
-				<a
-					href='https://support.apple.com/en-us/HT211775#:~:text=Make%20sure%20that%20you%27re%20wearing%20your-,AirPods%20Pro%20(1st%20or%C2%A02nd%20generation)%2C%C2%A0AirPods%20Max%2C%20AirPods%20(3rd%20generation)%2C%20Beats%20Fit%20Pro%2C%C2%A0or%20Beats%20Studio%20Pro,-%2C%C2%A0and%20that%20they%27re%20connected%20to%20your%20Mac'
-					className='underline hover:no-underline'
-				>
+				<Link href='https://support.apple.com/en-us/HT211775#:~:text=Make%20sure%20that%20you%27re%20wearing%20your-,AirPods%20Pro%20(1st%20or%C2%A02nd%20generation)%2C%C2%A0AirPods%20Max%2C%20AirPods%20(3rd%20generation)%2C%20Beats%20Fit%20Pro%2C%C2%A0or%20Beats%20Studio%20Pro,-%2C%C2%A0and%20that%20they%27re%20connected%20to%20your%20Mac'>
 					supported
-				</a>{' '}
+				</Link>{' '}
 				AirPods possible directly from the Spotify app. Currently spatial audio on macOS is only supported by Safari
 				thus SSA simply creates new hidden window and switches playback to web player.
 			</>
@@ -85,7 +83,7 @@ const projects: Array<Project> = [
 		links: ['https://github.com/DervexHero/SpotifySpatialAudio'],
 	},
 	{
-		name: 'This page',
+		name: 'dervex.dev',
 		technologies: ['ts', 'tailwind', 'react', 'next', 'vercel', 'node'],
 		time: 'August 2023',
 		icon: Dervex,
@@ -169,7 +167,7 @@ export default function Projects() {
 
 	function buttons(links: Array<string>) {
 		return links.map((link, index) => {
-			return <Link key={index} index={index} link={link} external='Project website' />
+			return <LinkButton key={index} index={index} link={link} tooltip='Project website' />
 		})
 	}
 

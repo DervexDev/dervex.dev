@@ -1,6 +1,7 @@
 import { SiLua, SiRust, SiTypescript } from 'react-icons/si'
 
 import Container from '@/components/container'
+import LinkButton from '@/components/linkButton'
 import Link from '@/components/link'
 
 interface Resource {
@@ -11,6 +12,18 @@ interface Resource {
 }
 
 const resources: Array<Resource> = [
+	{
+		name: 'pathsub',
+		desc: (
+			<>
+				Perform the subtraction of one relative or absolute path from another, yielding the subtraction difference
+				rather than the relative path, in contrast to the result obtained when using the{' '}
+				<Link href='https://crates.io/crates/pathdiff'>pathdiff</Link> crate.
+			</>
+		),
+		links: ['https://github.com/DervexHero/pathsub', 'https://crates.io/crates/pathsub'],
+		icon: <SiRust />,
+	},
 	{
 		name: 'svg-to-tsx',
 		desc: 'Minify and convert all your SVG files to React components (single TypeScript or JavaScript module). This package was specially made for this website to improve optimization even more.',
@@ -40,11 +53,8 @@ const resources: Array<Resource> = [
 		desc: (
 			<>
 				Implementation of over 20 sorting algorithms in Lua and Luau. All algorithms have been ported from Python which
-				can be found on{' '}
-				<a href='https://www.geeksforgeeks.org/sorting-algorithms/' className='underline hover:no-underline'>
-					GeeksforGeeks
-				</a>{' '}
-				site. Every file is ready to use module that can be imported.
+				can be found on <Link href='https://www.geeksforgeeks.org/sorting-algorithms/'>GeeksforGeeks</Link> site. Every
+				file is ready to use module that can be imported.
 			</>
 		),
 		links: ['https://github.com/DervexHero/LuaSortingAlgorithms'],
@@ -55,7 +65,7 @@ const resources: Array<Resource> = [
 export default function Resources() {
 	function buttons(links: Array<string>) {
 		return links.map((link, index) => {
-			return <Link key={index} index={index} link={link} external='Resource website' />
+			return <LinkButton key={index} index={index} link={link} tooltip='Resource website' />
 		})
 	}
 
