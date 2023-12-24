@@ -13,6 +13,12 @@ interface Resource {
 
 const resources: Array<Resource> = [
 	{
+		name: 'json2lua',
+		desc: 'Convert JSON string to Lua table. This package is very fast as it uses serde under the hood which means no tokenization takes place. It also supports all JSON and Lua datatypes.',
+		links: ['https://github.com/DervexHero/json2lua', 'https://crates.io/crates/json2lua'],
+		icon: <SiRust />,
+	},
+	{
 		name: 'pathsub',
 		desc: (
 			<>
@@ -27,7 +33,11 @@ const resources: Array<Resource> = [
 	{
 		name: 'svg-to-tsx',
 		desc: 'Minify and convert all your SVG files to React components (single TypeScript or JavaScript module). This package was specially made for this website to improve optimization even more.',
-		links: ['https://github.com/DervexHero/svg-to-tsx', 'https://www.npmjs.com/package/svg-to-tsx'],
+		links: [
+			'https://github.com/DervexHero/svg-to-tsx',
+			'https://www.npmjs.com/package/svg-to-tsx',
+			'https://yarnpkg.com/package/svg-to-tsx',
+		],
 		icon: <SiTypescript />,
 	},
 	{
