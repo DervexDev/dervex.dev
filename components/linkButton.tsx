@@ -1,7 +1,7 @@
 import { SiGithub, SiMicrosoft, SiRoblox, SiRobloxstudio, SiNpm, SiYarn } from 'react-icons/si'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 
-import { Cargo, Wally } from './icons'
+import { Cargo, Librs, Wally } from './icons'
 import Button from './button'
 import Tooltip from './tooltip'
 
@@ -27,21 +27,23 @@ function button(icon: JSX.Element, tooltip: string, link: string, index: number)
 }
 
 export default function LinkButton({ link, tooltip, index }: Props) {
-	if (link.includes('github')) {
+	if (link.includes('github.com')) {
 		return button(<SiGithub />, 'GitHub repo', link, index)
-	} else if (link.includes('npm')) {
+	} else if (link.includes('npmjs.com')) {
 		return button(<SiNpm />, 'npm package', link, index)
-	} else if (link.includes('yarn')) {
+	} else if (link.includes('yarnpkg.com')) {
 		return button(<SiYarn />, 'Yarn package', link, index)
-	} else if (link.includes('crates')) {
-		return button(<Cargo className='h-3/5' />, 'Cargo crate', link, index)
-	} else if (link.includes('wally')) {
-		return button(<Wally className='h-3/5' />, 'Wally package', link, index)
-	} else if (link.includes('visualstudio')) {
+	} else if (link.includes('crates.io')) {
+		return button(<Cargo className='h-1/2' />, 'Cargo crate', link, index)
+	} else if (link.includes('lib.rs')) {
+		return button(<Librs className='h-1/2' />, 'Lib.rs crate', link, index)
+	} else if (link.includes('wally.run')) {
+		return button(<Wally className='h-1/2' />, 'Wally package', link, index)
+	} else if (link.includes('marketplace.visualstudio.com')) {
 		return button(<SiMicrosoft />, 'VS marketplace', link, index)
-	} else if (link.includes('devforum')) {
+	} else if (link.includes('devforum.roblox.com')) {
 		return button(<SiRobloxstudio />, 'DevForum topic', link, index)
-	} else if (link.includes('roblox')) {
+	} else if (link.includes('create.roblox.com')) {
 		return button(<SiRoblox />, 'Roblox marketplace', link, index)
 	} else {
 		return button(<LiaExternalLinkAltSolid />, tooltip, link, index)

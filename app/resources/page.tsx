@@ -15,7 +15,11 @@ const resources: Array<Resource> = [
 	{
 		name: 'json2lua',
 		desc: 'Convert JSON string to Lua table. This package is very fast as it uses serde under the hood which means no tokenization takes place. It also supports all JSON and Lua datatypes.',
-		links: ['https://github.com/DervexHero/json2lua', 'https://crates.io/crates/json2lua'],
+		links: [
+			'https://github.com/DervexHero/json2lua',
+			'https://crates.io/crates/json2lua',
+			'https://lib.rs/crates/json2lua',
+		],
 		icon: <SiRust />,
 	},
 	{
@@ -27,7 +31,11 @@ const resources: Array<Resource> = [
 				<Link href='https://crates.io/crates/pathdiff'>pathdiff</Link> crate.
 			</>
 		),
-		links: ['https://github.com/DervexHero/pathsub', 'https://crates.io/crates/pathsub'],
+		links: [
+			'https://github.com/DervexHero/pathsub',
+			'https://crates.io/crates/pathsub',
+			'https://lib.rs/crates/pathsub',
+		],
 		icon: <SiRust />,
 	},
 	{
@@ -43,7 +51,11 @@ const resources: Array<Resource> = [
 	{
 		name: 'globenv',
 		desc: 'Globally set & read environment variables and paths (not just for the current process) on Windows, macOS or Linux. This Rust package lets you set environment variables easily and edit environment paths safely.',
-		links: ['https://github.com/DervexHero/globenv', 'https://crates.io/crates/globenv'],
+		links: [
+			'https://github.com/DervexHero/globenv',
+			'https://crates.io/crates/globenv',
+			'https://lib.rs/crates/globenv',
+		],
 		icon: <SiRust />,
 	},
 	{
