@@ -13,8 +13,18 @@ interface Resource {
 
 const resources: Array<Resource> = [
 	{
+		name: 'toml2lua',
+		desc: 'Convert TOML string to Lua table. This package is very simple as it uses serde under the hood which means no extra tokenization takes place. It also supports all TOML and Lua datatypes.',
+		links: [
+			'https://github.com/DervexHero/toml2lua',
+			'https://crates.io/crates/toml2lua',
+			'https://lib.rs/crates/toml2lua',
+		],
+		icon: <SiRust />,
+	},
+	{
 		name: 'json2lua',
-		desc: 'Convert JSON string to Lua table. This package is very fast as it uses serde under the hood which means no tokenization takes place. It also supports all JSON and Lua datatypes.',
+		desc: 'Convert JSON string to Lua table. This package is very simple as it uses serde under the hood which means no extra tokenization takes place. It also supports all JSON and Lua datatypes.',
 		links: [
 			'https://github.com/DervexHero/json2lua',
 			'https://crates.io/crates/json2lua',
