@@ -28,7 +28,7 @@ function button(icon: JSX.Element, tooltip: string, link: string, index: number)
 
 export default function LinkButton({ link, tooltip, index }: Props) {
 	if (link.includes('github.com')) {
-		return button(<SiGithub />, 'GitHub repo', link, index)
+		return button(<SiGithub />, link.includes('marketplace') ? 'GitHub marketplace' : 'GitHub repository', link, index)
 	} else if (link.includes('npmjs.com')) {
 		return button(<SiNpm />, 'npm package', link, index)
 	} else if (link.includes('yarnpkg.com')) {

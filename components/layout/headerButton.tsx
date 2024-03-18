@@ -1,4 +1,4 @@
-import { SiX, SiYoutube, SiGithub, SiRobloxstudio, SiUnrealengine } from 'react-icons/si'
+import { SiX, SiYoutube, SiGithub, SiRobloxstudio, SiKofi } from 'react-icons/si'
 import { BiError } from 'react-icons/bi'
 
 import { Dervex, DervexBanner } from '../icons'
@@ -19,10 +19,8 @@ function iconButton(icon: string) {
 			return <SiYoutube />
 		case 'github':
 			return <SiGithub />
-		case 'roblox':
-			return <SiRobloxstudio />
-		case 'unreal':
-			return <SiUnrealengine />
+		case 'kofi':
+			return <SiKofi />
 		case 'logo':
 			return <Dervex className='h-1/2 fill-black group-hover:fill-white dark:fill-white group-hover:dark:fill-black' />
 		case 'banner':

@@ -1,4 +1,4 @@
-import { SiLua, SiRust, SiTypescript } from 'react-icons/si'
+import { SiLua, SiRust, SiTypescript, SiGithubactions } from 'react-icons/si'
 
 import Container from '@/components/container'
 import LinkButton from '@/components/linkButton'
@@ -13,10 +13,19 @@ interface Resource {
 
 const resources: Array<Resource> = [
 	{
+		name: 'File Version Bumper',
+		desc: 'Bump version in any JSON or TOML file with this simple GitHub Action. Unlike most of the available actions this one allows you to bump any .json or .toml file by providing its path.',
+		links: [
+			'https://github.com/DervexDev/file-version-bumper',
+			'https://github.com/marketplace/actions/file-version-bumper',
+		],
+		icon: <SiGithubactions />,
+	},
+	{
 		name: 'toml2lua',
 		desc: 'Convert TOML string to Lua table. This package is very simple as it uses serde under the hood which means no extra tokenization takes place. It also supports all TOML and Lua datatypes.',
 		links: [
-			'https://github.com/DervexHero/toml2lua',
+			'https://github.com/DervexDev/toml2lua',
 			'https://crates.io/crates/toml2lua',
 			'https://lib.rs/crates/toml2lua',
 		],
@@ -26,7 +35,7 @@ const resources: Array<Resource> = [
 		name: 'json2lua',
 		desc: 'Convert JSON string to Lua table. This package is very simple as it uses serde under the hood which means no extra tokenization takes place. It also supports all JSON and Lua datatypes.',
 		links: [
-			'https://github.com/DervexHero/json2lua',
+			'https://github.com/DervexDev/json2lua',
 			'https://crates.io/crates/json2lua',
 			'https://lib.rs/crates/json2lua',
 		],
@@ -42,7 +51,7 @@ const resources: Array<Resource> = [
 			</>
 		),
 		links: [
-			'https://github.com/DervexHero/pathsub',
+			'https://github.com/DervexDev/pathsub',
 			'https://crates.io/crates/pathsub',
 			'https://lib.rs/crates/pathsub',
 		],
@@ -52,7 +61,7 @@ const resources: Array<Resource> = [
 		name: 'svg-to-tsx',
 		desc: 'Minify and convert all your SVG files to React components (single TypeScript or JavaScript module). This package was specially made for this website to improve optimization even more.',
 		links: [
-			'https://github.com/DervexHero/svg-to-tsx',
+			'https://github.com/DervexDev/svg-to-tsx',
 			'https://www.npmjs.com/package/svg-to-tsx',
 			'https://yarnpkg.com/package/svg-to-tsx',
 		],
@@ -62,7 +71,7 @@ const resources: Array<Resource> = [
 		name: 'globenv',
 		desc: 'Globally set & read environment variables and paths (not just for the current process) on Windows, macOS or Linux. This Rust package lets you set environment variables easily and edit environment paths safely.',
 		links: [
-			'https://github.com/DervexHero/globenv',
+			'https://github.com/DervexDev/globenv',
 			'https://crates.io/crates/globenv',
 			'https://lib.rs/crates/globenv',
 		],
@@ -71,13 +80,13 @@ const resources: Array<Resource> = [
 	{
 		name: 'Advanced Signal',
 		desc: 'Probably the best implementation of signal class in Roblox as it combines performance and flexibility into one module. You can choose whether you prefer speed or ease of use by changing its config.',
-		links: ['https://github.com/DervexHero/AdvancedSignal', 'https://wally.run/package/dervexhero/advancedsignal'],
+		links: ['https://github.com/DervexDev/AdvancedSignal', 'https://wally.run/package/dervexhero/advancedsignal'],
 		icon: <SiLua />,
 	},
 	{
 		name: 'Advanced Spring',
 		desc: 'This implementation of spring class supports every major Roblox and Luau datatype as well as auto running in separate thread. It’s very easy to use and customizable via constructor or global config.',
-		links: ['https://github.com/DervexHero/AdvancedSpring', 'https://wally.run/package/dervexhero/advancedspring'],
+		links: ['https://github.com/DervexDev/AdvancedSpring', 'https://wally.run/package/dervexhero/advancedspring'],
 		icon: <SiLua />,
 	},
 	{
@@ -89,7 +98,7 @@ const resources: Array<Resource> = [
 				file is ready to use module that can be imported.
 			</>
 		),
-		links: ['https://github.com/DervexHero/LuaSortingAlgorithms'],
+		links: ['https://github.com/DervexDev/LuaSortingAlgorithms'],
 		icon: <SiLua />,
 	},
 ]

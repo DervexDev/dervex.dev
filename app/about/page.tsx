@@ -10,7 +10,7 @@ import {
 	SiRust,
 	SiTypescript,
 	SiSwift,
-	SiPython
+	SiPython,
 } from 'react-icons/si'
 import Container from '@/components/container'
 
@@ -23,67 +23,67 @@ interface Skill {
 const softwareSkills: Array<Skill> = [
 	{
 		name: 'Unreal Engine',
-		level: 50,
-		icon: <SiUnrealengine />
+		level: 60,
+		icon: <SiUnrealengine />,
 	},
 	{
 		name: 'Visual Studio Code',
 		level: 100,
-		icon: <SiVisualstudio />
+		icon: <SiVisualstudio />,
 	},
 	{
 		name: 'Git',
 		level: 70,
-		icon: <SiGit />
+		icon: <SiGit />,
 	},
 	{
 		name: 'Roblox Studio',
 		level: 100,
-		icon: <SiRobloxstudio />
+		icon: <SiRobloxstudio />,
 	},
 	{
 		name: 'Blender',
-		level: 60,
-		icon: <SiBlender />
+		level: 50,
+		icon: <SiBlender />,
 	},
 	{
 		name: 'Adobe products',
 		level: 80,
-		icon: <SiAdobe />
-	}
+		icon: <SiAdobe />,
+	},
 ]
 
 const languageSkills: Array<Skill> = [
 	{
 		name: 'Rust',
-		level: 70,
-		icon: <SiRust />
+		level: 90,
+		icon: <SiRust />,
 	},
 	{
 		name: 'TypeScript (& JS)',
 		level: 80,
-		icon: <SiTypescript />
+		icon: <SiTypescript />,
 	},
 	{
 		name: 'Lua & Luau',
 		level: 100,
-		icon: <SiLua />
+		icon: <SiLua />,
 	},
 	{
 		name: 'C++',
-		level: 40,
-		icon: <SiCplusplus />
+		level: 50,
+		icon: <SiCplusplus />,
 	},
 	{
 		name: 'Swift',
-		level: 30,
-		icon: <SiSwift />
+		level: 40,
+		icon: <SiSwift />,
 	},
 	{
 		name: 'Python',
 		level: 60,
-		icon: <SiPython />
-	}
+		icon: <SiPython />,
+	},
 ]
 
 export default function About() {
@@ -124,16 +124,15 @@ export default function About() {
 
 				<p className='px-4 py-2 text-justify'>
 					My real name is Dawid Radziejewski, I’m {new Date().getFullYear() - 2005} years old and live in Poland, at
-					least for now. I do programming on daily basis as it’s my current job – mostly game development. I also really
-					enjoy working on open-source software that you can explore on this site. My other hobby is music production,
-					more exactly Electro House. Soon you might hear my tracks on Spotify and other services.
+					least for now. I do programming on a daily basis as it’s my current job – mostly game development. I also
+					really enjoy working on open-source software that you can explore on this site. My other hobby is music
+					production, all kinds of electronic genres.
 				</p>
 
 				<p className='px-4 py-2 text-justify'>
-					I’m learning programming since 2020 and I’m 100% self-thought. Currently I focus on <b>CLI apps (Rust)</b>
-					<b> Unreal Engine (C++)</b>, <b>Roblox (Lua)</b>, and other
-					<b> web or VSC tools (JavaScript and TypeScript)</b>. I’m graphic designer by profession and I’m learning it
-					since 2019. I’m familiar with following Adobe products:
+					I’ve been programming since 2020 and I’m 100% self-thought. Currently I focus on <b>CLI apps (Rust)</b>
+					<b> Unreal Engine (C++)</b>, <b>Roblox (Luau)</b>, and various
+					<b> web tools (JavaScript and TypeScript)</b>. I’m graphic designer by profession and I’m familiar with:
 					<b> Photoshop</b>, <b>Illustrator</b>, <b>PremierePro</b>, <b>AfterEffects</b> and <b>Audition</b>. I’m also
 					good at <b>Blender</b>, I know how create game-ready models and animate them.
 				</p>

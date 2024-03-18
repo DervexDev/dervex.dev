@@ -1,7 +1,7 @@
 import { clamp } from './utils'
 
 const TOKEN = process.env.GITHUB_TOKEN
-const MOBILE_LENGTH = 200
+const MOBILE_LENGTH = 210
 const INTENSITY = 0.75
 const QUERY = `
 query($userName:String!) {
@@ -19,7 +19,7 @@ query($userName:String!) {
 }`
 const VARIABLES = `
 {
-	"userName": "DervexHero"
+	"userName": "DervexDev"
 }`
 
 function getDummyData(length?: number): Array<number> {

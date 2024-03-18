@@ -27,7 +27,7 @@ const contacts: Array<Contact> = [
 	{
 		name: 'X',
 		desc: 'Another great way to contact with me',
-		link: 'https://x.com/DervexHero',
+		link: 'https://x.com/DervexDev',
 		icon: <SiX />,
 	},
 	{

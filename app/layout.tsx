@@ -12,7 +12,7 @@ const ROBOTO_MONO = Roboto_Mono({ subsets: ['latin'] })
 export const metadata: Metadata = {
 	title: 'Dervex | Everything Dev',
 	description:
-		'Software Engineer, Game Developer, UI/UX & Graphic Designer, 3D Artist and Music Producer also known as DervexHero or DRVX',
+		'Software Engineer, Game Developer, UI/UX & Graphic Designer, 3D Artist and Music Producer also known as DervexDev, DervexHero or DRVX',
 }
 
 export default function Root({ children }: { children: React.ReactNode }) {

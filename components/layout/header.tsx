@@ -14,49 +14,45 @@ import Button from '../button'
 const HEADER_BUTTONS: Array<HeaderButtonType> = [
 	{
 		link: '/',
-		icon: 'logo'
+		icon: 'logo',
 	},
 	{
 		link: 'about',
-		text: 'ABOUT'
+		text: 'ABOUT',
 	},
 	{
 		link: 'projects',
-		text: 'PROJECTS'
+		text: 'PROJECTS',
 	},
 	{
 		link: 'resources',
-		text: 'RESOURCES'
+		text: 'RESOURCES',
 	},
 	{
 		link: 'contact',
-		text: 'CONTACT'
+		text: 'CONTACT',
 	},
 	{
-		link: 'https://x.com/DervexHero',
-		icon: 'x'
+		link: 'https://x.com/DervexDev',
+		icon: 'x',
 	},
 	{
-		link: 'https://youtube.com/@DervexHero',
-		icon: 'youtube'
+		link: 'https://youtube.com/@DervexDev',
+		icon: 'youtube',
 	},
 	{
-		link: 'https://devforum.roblox.com/u/dervex/summary',
-		icon: 'roblox'
+		link: 'https://ko-fi.com/dervex',
+		icon: 'kofi',
 	},
 	{
-		link: 'https://dev.epicgames.com/community/profile/v1OA/Dervex',
-		icon: 'unreal'
+		link: 'https://github.com/DervexDev',
+		icon: 'github',
 	},
-	{
-		link: 'https://github.com/DervexHero',
-		icon: 'github'
-	}
 ]
 const TEXT_BUTTONS = countKeys(HEADER_BUTTONS, 'text')
 
 export default function Header() {
-	const [buttonCount, setButtonCount] = useState(10)
+	const [buttonCount, setButtonCount] = useState(HEADER_BUTTONS.length)
 	const [isExpanded, setIsExpanded] = useState(false)
 	const { getCollapseProps } = useCollapse({ isExpanded })
 
@@ -91,7 +87,7 @@ export default function Header() {
 							}`}
 						/>
 					</Button>
-				)
+				),
 			})
 		} else if (isExpanded) {
 			setIsExpanded(false)
@@ -177,7 +173,7 @@ export default function Header() {
 									)
 								})}
 
-								<div className='mobileGithubContributions h-[76px] grid grid-rows-5 grid-flow-col content-start overflow-hidden bg-white dark:bg-black'>
+								<div className='mobileGithubContributions w-[calc(100%+76px)] h-[76px] grid grid-rows-5 grid-flow-col content-start overflow-hidden bg-white dark:bg-black'>
 									{contributions.map((contribution, index) => {
 										return (
 											<div
@@ -192,9 +188,7 @@ export default function Header() {
 
 							<div className='w-[76px]'>
 								{iconButtons.map((button, index) => {
-									return (
-										<HeaderButton key={index} button={button} borders={index == iconButtons.length - 1 ? 'l' : 'lb'} />
-									)
+									return <HeaderButton key={index} button={button} borders={'lb'} />
 								})}
 							</div>
 						</div>

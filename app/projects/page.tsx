@@ -62,7 +62,7 @@ const projects: Array<Project> = [
 				there is no need to set up any additional stuff.
 			</>
 		),
-		links: ['https://github.com/DervexHero/luno', 'https://marketplace.visualstudio.com/items?itemName=Dervex.luno'],
+		links: ['https://github.com/DervexDev/luno', 'https://marketplace.visualstudio.com/items?itemName=Dervex.luno'],
 	},
 	{
 		name: 'Spotify SA',
@@ -80,7 +80,7 @@ const projects: Array<Project> = [
 				thus SSA simply creates new hidden window and switches playback to web player.
 			</>
 		),
-		links: ['https://github.com/DervexHero/SpotifySpatialAudio'],
+		links: ['https://github.com/DervexDev/SpotifySpatialAudio'],
 	},
 	{
 		name: 'dervex.dev',
@@ -88,7 +88,7 @@ const projects: Array<Project> = [
 		time: 'August 2023',
 		icon: Dervex,
 		desc: 'Well, every developer needs their own site, right? So here is mine! As you can see priorates were monochrome color scheme and simplicity. Those mysterious squares close to the GitHub logo are my contribution this year. Try resizing the window to see some magic happen! Also, this page has 100% score in every Google Lighthouse category.',
-		links: ['https://github.com/DervexHero/dervex.dev', 'https://dervex.dev/'],
+		links: ['https://github.com/DervexDev/dervex.dev', 'https://dervex.dev/'],
 	},
 	{
 		name: 'Universal Comments',
@@ -97,7 +97,7 @@ const projects: Array<Project> = [
 		icon: UniversalComments,
 		desc: 'Simple Visual Studio Code extension that allows you to use same comment characters in every major language. It also allows to customize your experience by auto closing comment block or by adding spaces automatically.',
 		links: [
-			'https://github.com/DervexHero/UniversalComments',
+			'https://github.com/DervexDev/UniversalComments',
 			'https://marketplace.visualstudio.com/items?itemName=Dervex.universal-comments',
 		],
 	},
@@ -107,7 +107,7 @@ const projects: Array<Project> = [
 		time: 'January 2023',
 		icon: Helium,
 		desc: 'Lightweight Roblox Studio plugin for camera bookmarks. It’s exact replica of Unreal Engine’s camera checkpoints. It allows you to save up to 10 camera location and then teleport to them either by keyboard shortcut or using UI.',
-		links: ['https://github.com/DervexHero/Helium', 'https://create.roblox.com/marketplace/asset/12243834454/'],
+		links: ['https://github.com/DervexDev/Helium', 'https://create.roblox.com/marketplace/asset/12243834454/'],
 	},
 ]
 
