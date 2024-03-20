@@ -20,6 +20,9 @@ export default function Home() {
 						typewriter
 							.typeString('Dervex')
 							.pauseFor(2000)
+							.typeString('Dev')
+							.pauseFor(2000)
+							.deleteChars(3)
 							.typeString('Hero')
 							.pauseFor(2000)
 							.deleteChars(9)
