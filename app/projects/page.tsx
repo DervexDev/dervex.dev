@@ -1,3 +1,4 @@
+import { BiError } from 'react-icons/bi'
 import {
 	SiLua,
 	SiTypescript,
@@ -17,8 +18,9 @@ import {
 	SiXcode,
 	SiRobloxstudio,
 	SiRust,
+	SiRedis,
+	SiDocusaurus,
 } from 'react-icons/si'
-import { BiError } from 'react-icons/bi'
 
 import { Argon, Dervex, Helium, Luno, SpotifySpatialAudio, UniversalComments } from '@/components/icons'
 
@@ -31,23 +33,30 @@ interface Project {
 	technologies: Array<string>
 	time: string
 	icon: (props: any) => JSX.Element
-	desc: string | JSX.Element
+	desc: JSX.Element
 	links: Array<string>
 }
 
 const projects: Array<Project> = [
 	{
 		name: 'Argon',
-		technologies: ['rust', 'js', 'lua', 'cpp', 'node', 'vsc', 'roblox', 'git'],
+		technologies: ['rust', 'ts', 'lua', 'cpp', 'redis', 'doc', 'vsc', 'roblox', 'git'],
 		time: 'October 2022 - now',
 		icon: Argon,
-		desc: 'Visual Studio Code extension and Roblox plugin. Argon allows for two-way sync of code or any instance between game engine and code editor. It’s very simple to use so it’s accessible even for beginners and comes with many useful built-in tools. It will fit everyone’s needs as it’s highly customizable.',
+		desc: (
+			<>
+				CLI app, VS Code extension and Roblox plugin. Argon enables the use of external editors, tools and version
+				control systems. Comes with many useful features that help manage project, maintain code and manipulate
+				instances. Extremely customizable via global config and templates. Ultra fast and well optimized while being
+				easy to use.
+			</>
+		),
 		links: [
-			'https://github.com/argon-rbx/argon',
+			'https://github.com/argon-rbx',
 			'https://marketplace.visualstudio.com/items?itemName=Dervex.argon',
 			'https://create.roblox.com/marketplace/asset/11263738833/',
 			'https://devforum.roblox.com/t/2021776',
-			'https://argonstatsapi.web.app/',
+			'https://argon.wiki',
 		],
 	},
 	{
@@ -87,7 +96,14 @@ const projects: Array<Project> = [
 		technologies: ['ts', 'tailwind', 'react', 'next', 'vercel', 'node'],
 		time: 'August 2023',
 		icon: Dervex,
-		desc: 'Well, every developer needs their own site, right? So here is mine! As you can see priorates were monochrome color scheme and simplicity. Those mysterious squares close to the GitHub logo are my contribution this year. Try resizing the window to see some magic happen! Also, this page has 100% score in every Google Lighthouse category.',
+		desc: (
+			<>
+				Well, every developer needs their own site, right? So here is mine! As you can see priorates were monochrome
+				color scheme and simplicity. Those mysterious squares close to the GitHub logo are my contribution this year.
+				Try resizing the window to see some magic happen! Also, this page has 100% score in every Google Lighthouse
+				category.
+			</>
+		),
 		links: ['https://github.com/DervexDev/dervex.dev', 'https://dervex.dev/'],
 	},
 	{
@@ -95,7 +111,12 @@ const projects: Array<Project> = [
 		technologies: ['ts', 'vsc'],
 		time: 'January 2023',
 		icon: UniversalComments,
-		desc: 'Simple Visual Studio Code extension that allows you to use same comment characters in every major language. It also allows to customize your experience by auto closing comment block or by adding spaces automatically.',
+		desc: (
+			<>
+				Simple Visual Studio Code extension that allows you to use same comment characters in every major language. It
+				also allows to customize your experience by auto closing comment block or by adding spaces automatically.
+			</>
+		),
 		links: [
 			'https://github.com/DervexDev/UniversalComments',
 			'https://marketplace.visualstudio.com/items?itemName=Dervex.universal-comments',
@@ -106,7 +127,13 @@ const projects: Array<Project> = [
 		technologies: ['lua', 'roblox'],
 		time: 'January 2023',
 		icon: Helium,
-		desc: 'Lightweight Roblox Studio plugin for camera bookmarks. It’s exact replica of Unreal Engine’s camera checkpoints. It allows you to save up to 10 camera location and then teleport to them either by keyboard shortcut or using UI.',
+		desc: (
+			<>
+				Lightweight Roblox Studio plugin for camera bookmarks. It’s exact replica of Unreal Engine’s camera checkpoints.
+				It allows you to save up to 10 camera location and then teleport to them either by keyboard shortcut or using
+				UI.
+			</>
+		),
 		links: ['https://github.com/DervexDev/Helium', 'https://create.roblox.com/marketplace/asset/12243834454/'],
 	},
 ]
@@ -135,6 +162,8 @@ export default function Projects() {
 					return div(index, <SiCplusplus />)
 				case 'swift':
 					return div(index, <SiSwift />)
+				case 'redis':
+					return div(index, <SiRedis />)
 				case 'docker':
 					return div(index, <SiDocker />)
 				case 'tailwind':
@@ -145,6 +174,8 @@ export default function Projects() {
 					return div(index, <SiReact />)
 				case 'next':
 					return div(index, <SiNextdotjs />)
+				case 'doc':
+					return div(index, <SiDocusaurus />)
 				case 'vercel':
 					return div(index, <SiVercel />)
 				case 'vapor':
