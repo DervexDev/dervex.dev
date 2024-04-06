@@ -130,7 +130,7 @@ export default function About() {
 				</p>
 
 				<p className='px-4 py-2 text-justify'>
-					I’ve been programming since 2020 and I’m 100% self-thought. Currently I focus on <b>CLI apps (Rust)</b>
+					I’ve been programming since 2020 and I’m 100% self-taught. Currently I focus on <b>CLI apps (Rust)</b>
 					<b> Unreal Engine (C++)</b>, <b>Roblox (Luau)</b>, and various
 					<b> web tools (JavaScript and TypeScript)</b>. I’m graphic designer by profession and I’m familiar with:
 					<b> Photoshop</b>, <b>Illustrator</b>, <b>PremierePro</b>, <b>AfterEffects</b> and <b>Audition</b>. I’m also
