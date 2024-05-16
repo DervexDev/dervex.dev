@@ -1,5 +1,6 @@
 import { BiError } from 'react-icons/bi'
 import {
+	SiRust,
 	SiLua,
 	SiTypescript,
 	SiJavascript,
@@ -9,20 +10,22 @@ import {
 	SiNodedotjs,
 	SiDocker,
 	SiReact,
+	SiPreact,
 	SiNextdotjs,
+	SiVite,
 	SiVapor,
+	SiGooglechrome,
 	SiSpotify,
 	SiGit,
 	SiVercel,
+	SiRedis,
+	SiDocusaurus,
 	SiVisualstudiocode,
 	SiXcode,
 	SiRobloxstudio,
-	SiRust,
-	SiRedis,
-	SiDocusaurus,
 } from 'react-icons/si'
 
-import { Argon, Dervex, Helium, Luno, SpotifySpatialAudio, UniversalComments } from '@/components/icons'
+import { Argon, GithubLoc, Luno, SpotifySpatialAudio, Dervex, UniversalComments, Helium } from '@/components/icons'
 
 import Container from '@/components/container'
 import LinkButton from '@/components/linkButton'
@@ -58,6 +61,21 @@ const projects: Array<Project> = [
 			'https://devforum.roblox.com/t/2021776',
 			'https://argon.wiki',
 		],
+	},
+	{
+		name: 'GitHub LOC',
+		technologies: ['ts', 'preact', 'vite', 'chrome'],
+		time: 'May 2024',
+		icon: GithubLoc,
+		desc: (
+			<>
+				Simple yet elegant Google Chrome extension that allows you to view repository Lines Of Code with an option to
+				exclude selected languages. Clicking on the stat will take you to the{' '}
+				<Link href='https://ghloc.vercel.app/DervexDev/github-loc'>ghloc.vercel.app</Link> page with even more LOC
+				details.
+			</>
+		),
+		links: ['https://github.com/DervexDev/github-loc'],
 	},
 	{
 		name: 'LUNO',
@@ -172,14 +190,20 @@ export default function Projects() {
 					return div(index, <SiNodedotjs />)
 				case 'react':
 					return div(index, <SiReact />)
+				case 'preact':
+					return div(index, <SiPreact />)
 				case 'next':
 					return div(index, <SiNextdotjs />)
+				case 'vite':
+					return div(index, <SiVite />)
 				case 'doc':
 					return div(index, <SiDocusaurus />)
 				case 'vercel':
 					return div(index, <SiVercel />)
 				case 'vapor':
 					return div(index, <SiVapor />)
+				case 'chrome':
+					return div(index, <SiGooglechrome />)
 				case 'spotify':
 					return div(index, <SiSpotify />)
 				case 'git':

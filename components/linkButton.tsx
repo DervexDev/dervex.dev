@@ -1,4 +1,4 @@
-import { SiGithub, SiMicrosoft, SiRoblox, SiRobloxstudio, SiNpm, SiYarn } from 'react-icons/si'
+import { SiGithub, SiMicrosoft, SiRoblox, SiRobloxstudio, SiNpm, SiYarn, SiGooglechrome } from 'react-icons/si'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 
 import { Cargo, Librs, Wally } from './icons'
@@ -41,6 +41,8 @@ export default function LinkButton({ link, tooltip, index }: Props) {
 		return button(<Wally className='h-1/2' />, 'Wally package', link, index)
 	} else if (link.includes('marketplace.visualstudio.com')) {
 		return button(<SiMicrosoft />, 'VS marketplace', link, index)
+	} else if (link.includes('chromewebstore.google.com')) {
+		return button(<SiGooglechrome />, 'Chrome Web Store', link, index)
 	} else if (link.includes('devforum.roblox.com')) {
 		return button(<SiRobloxstudio />, 'DevForum topic', link, index)
 	} else if (link.includes('create.roblox.com')) {
