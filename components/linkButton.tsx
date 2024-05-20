@@ -1,5 +1,6 @@
 import { SiGithub, SiMicrosoft, SiRoblox, SiRobloxstudio, SiNpm, SiYarn, SiGooglechrome } from 'react-icons/si'
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
+import { VscGithub } from 'react-icons/vsc'
 
 import { Cargo, Librs, Wally } from './icons'
 import Button from './button'
@@ -27,8 +28,10 @@ function button(icon: JSX.Element, tooltip: string, link: string, index: number)
 }
 
 export default function LinkButton({ link, tooltip, index }: Props) {
-	if (link.includes('github.com')) {
-		return button(<SiGithub />, link.includes('marketplace') ? 'GitHub marketplace' : 'GitHub repository', link, index)
+	if (link.includes('github.com/marketplace')) {
+		return button(<VscGithub />, 'GitHub marketplace', link, index)
+	} else if (link.includes('github.com')) {
+		return button(<SiGithub />, 'GitHub repository', link, index)
 	} else if (link.includes('npmjs.com')) {
 		return button(<SiNpm />, 'npm package', link, index)
 	} else if (link.includes('yarnpkg.com')) {

@@ -13,11 +13,25 @@ interface Resource {
 
 const resources: Array<Resource> = [
 	{
+		name: 'Setup Roblox Studio',
+		desc: (
+			<>
+				This simple GitHub Action allows you to install Roblox Studio which you can integrate with your CI/CD workflow.
+				Currently available only on macOS as Windows runners are slow and Roblox Studio is not officially on Linux.
+			</>
+		),
+		links: [
+			'https://github.com/DervexDev/setup-roblox-studio',
+			'https://github.com/marketplace/actions/setup-roblox-studio',
+		],
+		icon: <SiGithubactions />,
+	},
+	{
 		name: 'File Version Bumper',
 		desc: (
 			<>
 				Bump version in any JSON or TOML file with this simple GitHub Action. Unlike most of the available actions this
-				one allows you to bump any .json or .toml file by providing its path.
+				one allows you to bump any <b>.json</b> or <b>.toml</b> file by providing its path.
 			</>
 		),
 		links: [
