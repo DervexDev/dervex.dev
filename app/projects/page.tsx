@@ -1,6 +1,7 @@
 import { BiError } from 'react-icons/bi'
 import {
 	SiRust,
+	SiGo,
 	SiLua,
 	SiTypescript,
 	SiJavascript,
@@ -64,7 +65,7 @@ const projects: Array<Project> = [
 	},
 	{
 		name: 'GitHub LOC',
-		technologies: ['ts', 'preact', 'vite', 'chrome'],
+		technologies: ['go', 'ts', 'preact', 'vite', 'chrome'],
 		time: 'May 2024',
 		icon: GithubLoc,
 		desc: (
@@ -75,7 +76,10 @@ const projects: Array<Project> = [
 				details.
 			</>
 		),
-		links: ['https://github.com/DervexDev/github-loc'],
+		links: [
+			'https://github.com/DervexDev/github-loc',
+			'https://chromewebstore.google.com/detail/github-loc/clfbbldiigihjkignlkngblahkpalmhh',
+		],
 	},
 	{
 		name: 'LUNO',
@@ -170,6 +174,8 @@ export default function Projects() {
 			switch (technology) {
 				case 'rust':
 					return div(index, <SiRust />)
+				case 'go':
+					return div(index, <SiGo />)
 				case 'lua':
 					return div(index, <SiLua />)
 				case 'ts':
