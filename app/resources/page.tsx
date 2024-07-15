@@ -13,6 +13,21 @@ interface Resource {
 
 const resources: Array<Resource> = [
 	{
+		name: 'yaml2lua',
+		desc: (
+			<>
+				Convert YAML string to Lua table. This package is very simple as it uses serde under the hood which means no
+				extra tokenization takes place. It also supports all YAML and Lua datatypes.
+			</>
+		),
+		links: [
+			'https://github.com/DervexDev/yaml2lua',
+			'https://crates.io/crates/yaml2lua',
+			'https://lib.rs/crates/yaml2lua',
+		],
+		icon: <SiRust />,
+	},
+	{
 		name: 'Setup Roblox Studio',
 		desc: (
 			<>
