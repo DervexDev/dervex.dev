@@ -60,19 +60,19 @@ const languageSkills: Array<Skill> = [
 		icon: <SiRust />,
 	},
 	{
-		name: 'TypeScript (& JS)',
+		name: 'C++',
+		level: 70,
+		icon: <SiCplusplus />,
+	},
+	{
+		name: 'TypeScript & JS',
 		level: 80,
 		icon: <SiTypescript />,
 	},
 	{
-		name: 'Lua & Luau',
+		name: 'Lua(u)',
 		level: 100,
 		icon: <SiLua />,
-	},
-	{
-		name: 'C++',
-		level: 50,
-		icon: <SiCplusplus />,
 	},
 	{
 		name: 'Swift',
