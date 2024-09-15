@@ -7,6 +7,7 @@ import {
 	SiJavascript,
 	SiCplusplus,
 	SiSwift,
+	SiKotlin,
 	SiTailwindcss,
 	SiNodedotjs,
 	SiDocker,
@@ -22,11 +23,21 @@ import {
 	SiRedis,
 	SiDocusaurus,
 	SiVisualstudiocode,
+	SiRider,
 	SiXcode,
 	SiRobloxstudio,
 } from 'react-icons/si'
 
-import { Argon, GithubLoc, Luno, SpotifySpatialAudio, Dervex, UniversalComments, Helium } from '@/components/icons'
+import {
+	Argon,
+	Souder,
+	GithubLoc,
+	Luno,
+	SpotifySpatialAudio,
+	Dervex,
+	UniversalComments,
+	Helium,
+} from '@/components/icons'
 
 import Container from '@/components/container'
 import LinkButton from '@/components/linkButton'
@@ -62,6 +73,20 @@ const projects: Array<Project> = [
 			'https://devforum.roblox.com/t/2021776',
 			'https://argon.wiki',
 		],
+	},
+	{
+		name: 'Souder',
+		technologies: ['kotlin', 'rider'],
+		time: 'September 2024',
+		icon: Souder,
+		desc: (
+			<>
+				<b>Sou</b>rce/Hea<b>der</b> dynamic editor splitter for JetBrains Rider IDE designed for C++ projects. Improves
+				development experience when working with a large codebase. This plugin is experimental as it intensively abuses
+				IntelliJ API
+			</>
+		),
+		links: ['https://github.com/DervexDev/souder'],
 	},
 	{
 		name: 'GitHub LOC',
@@ -186,6 +211,8 @@ export default function Projects() {
 					return div(index, <SiCplusplus />)
 				case 'swift':
 					return div(index, <SiSwift />)
+				case 'kotlin':
+					return div(index, <SiKotlin />)
 				case 'redis':
 					return div(index, <SiRedis />)
 				case 'docker':
@@ -216,6 +243,8 @@ export default function Projects() {
 					return div(index, <SiGit />)
 				case 'vsc':
 					return div(index, <SiVisualstudiocode />)
+				case 'rider':
+					return div(index, <SiRider />)
 				case 'xcode':
 					return div(index, <SiXcode />)
 				case 'roblox':
