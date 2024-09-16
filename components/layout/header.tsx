@@ -29,6 +29,10 @@ const HEADER_BUTTONS: Array<HeaderButtonType> = [
 		text: 'RESOURCES',
 	},
 	{
+		link: 'music',
+		text: 'MUSIC',
+	},
+	{
 		link: 'contact',
 		text: 'CONTACT',
 	},
@@ -43,6 +47,10 @@ const HEADER_BUTTONS: Array<HeaderButtonType> = [
 	{
 		link: 'https://ko-fi.com/dervex',
 		icon: 'kofi',
+	},
+	{
+		link: 'https://wakatime.com/@Dervex',
+		icon: 'wakatime',
 	},
 	{
 		link: 'https://github.com/DervexDev',
@@ -200,8 +208,8 @@ export default function Header() {
 
 	useEffect(() => {
 		function updateHeaderSize() {
-			if (window.innerWidth > 640) {
-				if (window.innerWidth >= 1024) {
+			if (window.innerWidth > 768) {
+				if (window.innerWidth >= 1280) {
 					setButtonCount(HEADER_BUTTONS.length)
 				} else {
 					setButtonCount(clamp(Math.floor(window.innerWidth / 100) - 1, TEXT_BUTTONS + 2, HEADER_BUTTONS.length))

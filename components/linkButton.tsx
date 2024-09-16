@@ -1,4 +1,18 @@
-import { SiGithub, SiMicrosoft, SiRoblox, SiRobloxstudio, SiNpm, SiYarn, SiGooglechrome } from 'react-icons/si'
+import {
+	SiGithub,
+	SiMicrosoft,
+	SiRoblox,
+	SiRobloxstudio,
+	SiNpm,
+	SiYarn,
+	SiGooglechrome,
+	SiSpotify,
+	SiApplemusic,
+	SiTidal,
+	SiAmazon,
+	SiYoutubemusic,
+} from 'react-icons/si'
+
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 import { VscGithub } from 'react-icons/vsc'
 
@@ -50,6 +64,16 @@ export default function LinkButton({ link, tooltip, index }: Props) {
 		return button(<SiRobloxstudio />, 'DevForum topic', link, index)
 	} else if (link.includes('create.roblox.com')) {
 		return button(<SiRoblox />, 'Roblox marketplace', link, index)
+	} else if (link.includes('open.spotify.com')) {
+		return button(<SiSpotify />, 'Stream on Spotify', link, index)
+	} else if (link.includes('music.apple.com')) {
+		return button(<SiApplemusic />, 'Stream on Apple Music', link, index)
+	} else if (link.includes('music.youtube.com')) {
+		return button(<SiYoutubemusic />, 'Stream on YouTube Music', link, index)
+	} else if (link.includes('listen.tidal.com')) {
+		return button(<SiTidal />, 'Stream on Tidal', link, index)
+	} else if (link.includes('amazon.com')) {
+		return button(<SiAmazon />, 'Buy on Amazon', link, index)
 	} else {
 		return button(<LiaExternalLinkAltSolid />, tooltip, link, index)
 	}
