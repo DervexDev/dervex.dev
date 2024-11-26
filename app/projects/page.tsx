@@ -30,6 +30,7 @@ import {
 
 import {
 	Argon,
+	Cmlc,
 	Souder,
 	GithubLoc,
 	Luno,
@@ -73,6 +74,19 @@ const projects: Array<Project> = [
 			'https://devforum.roblox.com/t/2021776',
 			'https://argon.wiki',
 		],
+	},
+	{
+		name: 'CMLC',
+		technologies: ['js', 'vsc'],
+		time: 'September 2024',
+		icon: Cmlc,
+		desc: (
+			<>
+				Commit Message Length Counter is a small VS Code extension created for those who want to make sure their commit
+				messages are fully rendered on GitHub by avoiding exceeding the maximum length of <b>72</b> characters.
+			</>
+		),
+		links: ['https://github.com/DervexDev/CMLC', 'https://marketplace.visualstudio.com/items?itemName=Dervex.cmlc'],
 	},
 	{
 		name: 'Souder',
