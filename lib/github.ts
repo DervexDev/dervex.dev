@@ -23,7 +23,7 @@ const VARIABLES = `
 }`
 
 function getDummyData(length?: number): Array<number> {
-	length = length || 360
+	length = length || 450
 
 	const data: Array<number> = []
 
@@ -38,6 +38,10 @@ function getData(mobile?: boolean, data?: Array<number>): Array<number> {
 	if (data) {
 		if (!mobile) {
 			if (data.length != 0) {
+				for (let i = 0; i < 90; i++) {
+					data.push(data[i])
+				}
+
 				return data
 			} else {
 				return getDummyData()

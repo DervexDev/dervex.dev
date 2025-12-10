@@ -8,7 +8,11 @@ export default async function Sidebar() {
 		<Container className='hidden lg:block h-[calc(100vh-80px)] w-[78px] float-right overflow-hidden' borders='lrb'>
 			<div id='githubContributions' className='grid grid-cols-5 grid-flow-row content-start'>
 				{contributions.map((contribution, index) => {
-					return <div key={index} className='bg-black dark:bg-white aspect-square' style={{ opacity: contribution }} />
+					return (
+						<div key={index} className='relative w-full pb-[100%]'>
+							<div className='absolute inset-0 bg-black dark:bg-white' style={{ opacity: contribution }} />
+						</div>
+					)
 				})}
 			</div>
 		</Container>

@@ -65,7 +65,7 @@ const projects: Array<Project> = [
 		icon: Byft,
 		desc: (
 			<>
-				Build Your Factory Tycoon - A Roblox game where you design and optimize your own factory in a low-poly style. It
+				Build Your Factory Tycoon - A Roblox game where you design and optimize your own low-poly factory. It has
 				reached <b>~9K</b> concurrent players and currently has about <b>10M</b> total visits. If you are interested in
 				games like Satisfactory or Factorio, you should definitely check it out!
 			</>
