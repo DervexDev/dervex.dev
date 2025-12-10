@@ -16,7 +16,7 @@ import {
 import { LiaExternalLinkAltSolid } from 'react-icons/lia'
 import { VscGithub } from 'react-icons/vsc'
 
-import { Cargo, Librs, Wally } from './icons'
+import { Cargo, Librs, OpenVSX, Wally } from './icons'
 import Button from './button'
 import Tooltip from './tooltip'
 
@@ -58,12 +58,16 @@ export default function LinkButton({ link, tooltip, index }: Props) {
 		return button(<Wally className='h-1/2' />, 'Wally package', link, index)
 	} else if (link.includes('marketplace.visualstudio.com')) {
 		return button(<SiMicrosoft />, 'VS marketplace', link, index)
+	} else if (link.includes('open-vsx.org')) {
+		return button(<OpenVSX width='1em' height='1em' />, 'Open VSX registry', link, index)
 	} else if (link.includes('chromewebstore.google.com')) {
 		return button(<SiGooglechrome />, 'Chrome Web Store', link, index)
 	} else if (link.includes('devforum.roblox.com')) {
 		return button(<SiRobloxstudio />, 'DevForum topic', link, index)
 	} else if (link.includes('create.roblox.com')) {
 		return button(<SiRoblox />, 'Roblox marketplace', link, index)
+	} else if (link.includes('roblox.com')) {
+		return button(<SiRoblox />, 'Roblox game', link, index)
 	} else if (link.includes('open.spotify.com')) {
 		return button(<SiSpotify />, 'Stream on Spotify', link, index)
 	} else if (link.includes('music.apple.com')) {

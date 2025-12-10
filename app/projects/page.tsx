@@ -26,6 +26,9 @@ import {
 	SiRider,
 	SiXcode,
 	SiRobloxstudio,
+	SiAmazonaws,
+	SiAmazondynamodb,
+	SiAwslambda,
 } from 'react-icons/si'
 
 import {
@@ -38,6 +41,7 @@ import {
 	Dervex,
 	UniversalComments,
 	Helium,
+	Byft,
 } from '@/components/icons'
 
 import Container from '@/components/container'
@@ -55,6 +59,20 @@ interface Project {
 
 const projects: Array<Project> = [
 	{
+		name: 'BYFT',
+		technologies: ['lua', 'rust', 'roblox', 'aws', 'lambda', 'dynamodb'],
+		time: 'May 2025 - now',
+		icon: Byft,
+		desc: (
+			<>
+				Build Your Factory Tycoon - A Roblox game where you design and optimize your own factory in a low-poly style. It
+				reached <b>~9K</b> concurrent players and currently has about <b>10M</b> total visits. If you are interested in
+				games like Satisfactory or Factorio, you should definitely check it out!
+			</>
+		),
+		links: ['https://www.roblox.com/games/93002338579227', 'https://raccat.com'],
+	},
+	{
 		name: 'Argon',
 		technologies: ['rust', 'ts', 'lua', 'cpp', 'redis', 'doc', 'vsc', 'roblox', 'git'],
 		time: 'October 2022 - now',
@@ -70,7 +88,8 @@ const projects: Array<Project> = [
 		links: [
 			'https://github.com/argon-rbx',
 			'https://marketplace.visualstudio.com/items?itemName=Dervex.argon',
-			'https://create.roblox.com/marketplace/asset/11263738833/',
+			'https://open-vsx.org/extension/Dervex/argon',
+			'https://create.roblox.com/marketplace/asset/11263738833',
 			'https://devforum.roblox.com/t/2021776',
 			'https://argon.wiki',
 		],
@@ -97,7 +116,7 @@ const projects: Array<Project> = [
 			<>
 				<b>Sou</b>rce/Hea<b>der</b> dynamic editor splitter for JetBrains Rider IDE designed for C++ projects. Improves
 				development experience when working with a large codebase. This plugin is experimental as it intensively abuses
-				IntelliJ API
+				IntelliJ API.
 			</>
 		),
 		links: ['https://github.com/DervexDev/souder'],
@@ -227,6 +246,12 @@ export default function Projects() {
 					return div(index, <SiSwift />)
 				case 'kotlin':
 					return div(index, <SiKotlin />)
+				case 'aws':
+					return div(index, <SiAmazonaws />)
+				case 'lambda':
+					return div(index, <SiAwslambda />)
+				case 'dynamodb':
+					return div(index, <SiAmazondynamodb />)
 				case 'redis':
 					return div(index, <SiRedis />)
 				case 'docker':
