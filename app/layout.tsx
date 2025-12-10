@@ -7,7 +7,11 @@ import Header from '@/components/layout/header'
 import Sidebar from '@/components/layout/sidebar'
 import Footer from '@/components/layout/footer'
 
-const ROBOTO_MONO = Roboto_Mono({ subsets: ['latin'] })
+const ROBOTO_MONO = Roboto_Mono({
+	subsets: ['latin'],
+	display: 'swap',
+	variable: '--font-roboto-mono',
+})
 
 export const metadata: Metadata = {
 	title: 'Dervex | Everything Dev',
