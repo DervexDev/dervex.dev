@@ -57,7 +57,7 @@ interface Project {
 	links: Array<string>
 }
 
-const projects: Array<Project> = [
+const PROJECTS: Array<Project> = [
 	{
 		name: 'BYFT',
 		technologies: ['lua', 'rust', 'roblox', 'aws', 'lambda', 'dynamodb'],
@@ -306,7 +306,7 @@ export default function Projects() {
 				Rotate your device to see more details
 			</p>
 			<div className='flex flex-wrap justify-center'>
-				{projects.map((project, index) => {
+				{PROJECTS.map((project, index) => {
 					return (
 						<Container key={index} className='w-[600px] m-[20px] self-center'>
 							<Container className='h-[78px] flex flex-row' borders='b'>

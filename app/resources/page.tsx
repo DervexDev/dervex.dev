@@ -11,7 +11,7 @@ interface Resource {
 	icon: JSX.Element
 }
 
-const resources: Array<Resource> = [
+const RESOURCES: Array<Resource> = [
 	{
 		name: 'yaml2lua',
 		desc: (
@@ -176,7 +176,7 @@ export default function Resources() {
 
 	return (
 		<div className='w-full flex flex-wrap justify-center'>
-			{resources.map((resource, index) => {
+			{RESOURCES.map((resource, index) => {
 				return (
 					<Container key={index} className='w-[600px] m-[20px] self-center'>
 						<Container className='h-[78px] flex flex-row' borders='b'>

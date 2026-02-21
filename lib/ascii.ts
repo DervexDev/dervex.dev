@@ -1,4 +1,4 @@
-export const drvx = `
+export const name = `
     ____  ____ _    ___  __
    / __ \\/ __ \\ |  / / |/ /
   / / / / /_/ / | / /|   / 

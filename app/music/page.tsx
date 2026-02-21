@@ -6,7 +6,7 @@ interface Release {
 	links: Array<string>
 }
 
-const resources: Array<Release> = [
+const MUSIC: Array<Release> = [
 	{
 		title: 'Without You',
 		links: [
@@ -28,7 +28,7 @@ export default function Resources() {
 
 	return (
 		<div className='w-full flex flex-wrap justify-center'>
-			{resources.map((resource, index) => {
+			{MUSIC.map((resource, index) => {
 				const spotify = resource.links[0]
 
 				return (

@@ -15,27 +15,27 @@ interface Notification {
 	button: string
 }
 
-const notifications: Array<Notification> = [
+const NOTIFICATIONS: Array<Notification> = [
 	{
 		text: 'This is placeholder to make animations look better.',
-		button: 'Okay'
+		button: 'Okay',
 	},
 	{
 		text: 'An error occurred while processing your request!',
-		button: 'Continue'
+		button: 'Continue',
 	},
 	{
 		text: 'Please select amount you want to pay me first!',
-		button: 'Okay'
+		button: 'Okay',
 	},
 	{
 		text: 'Waiting for the transaction to finish...',
-		button: 'Cancel'
+		button: 'Cancel',
 	},
 	{
 		text: 'Transaction completed. Thank you!',
-		button: 'Home'
-	}
+		button: 'Home',
+	},
 ]
 
 let currentId = ''
@@ -99,7 +99,7 @@ export default function PayMe() {
 					className='w-full h-full px-4 py-4'
 					placeholder='Add note (optional)'
 					value={note}
-					callback={event => {
+					callback={(event) => {
 						let value = event.target.value
 						value = value.substring(0, 300)
 						updateNote(value)
@@ -113,7 +113,7 @@ export default function PayMe() {
 						className='w-[calc(100%-30px)] h-full text-4xl pl-4 pt-[18px]'
 						placeholder='0'
 						value={amount}
-						callback={event => {
+						callback={(event) => {
 							let value = event.target.value
 							value = value.replace(/\D/g, '')
 							value = value.substring(0, 4)
@@ -141,7 +141,7 @@ export default function PayMe() {
 				style={{ height: notification == 0 ? '0%' : '100%' }}
 			>
 				<div className='w-[80%] h-[60%] flex flex-wrap justify-center'>
-					<p className='w-full text-3xl text-center self-center'>{notifications[notification].text}</p>
+					<p className='w-full text-3xl text-center self-center'>{NOTIFICATIONS[notification].text}</p>
 
 					<Button
 						className={`w-1/2 h-[50px] self-center duration-100 transition-opacity opacity-${
@@ -158,7 +158,7 @@ export default function PayMe() {
 							showNotification(0)
 						}}
 					>
-						{notifications[notification].button}
+						{NOTIFICATIONS[notification].button}
 					</Button>
 				</div>
 			</div>

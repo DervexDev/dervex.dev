@@ -17,7 +17,7 @@ interface Contact {
 	icon: JSX.Element
 }
 
-const contacts: Array<Contact> = [
+const CONTACTS: Array<Contact> = [
 	{
 		name: 'Discord',
 		desc: 'The best way to get in touch with me',
@@ -113,7 +113,7 @@ export default function Contact() {
 
 	return (
 		<div className='w-full xl:w-3/4 flex flex-wrap justify-center'>
-			{contacts.map((contact, index) => {
+			{CONTACTS.map((contact, index) => {
 				return (
 					<Container key={index} className='w-[350px] h-[160px] md:w-[400px] m-[20px]'>
 						<Container className='h-1/2 flex flex-row' borders='b'>

@@ -5,7 +5,7 @@ import { useCollapse } from 'react-collapsed'
 
 import { clamp, countKeys } from '@/lib/utils'
 import { getContributions } from '@/lib/github'
-import { drvx } from '@/lib/ascii'
+import { name } from '@/lib/ascii'
 
 import HeaderButton, { HeaderButtonType } from './headerButton'
 import Container from '../container'
@@ -229,7 +229,7 @@ export default function Header() {
 
 	if (typeof window !== 'undefined') {
 		console.clear()
-		console.log(drvx)
+		console.log(name)
 	}
 
 	return (

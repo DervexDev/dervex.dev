@@ -1,29 +1,32 @@
 import { clamp } from './utils'
 
-const TOKEN = process.env.GITHUB_TOKEN
-const MOBILE_LENGTH = 210
+const MOBILE_LENGTH = 250
+const DUMMY_LENGTH = 450
+const FILL_LENGTH = 90
 const INTENSITY = 0.75
+
+const TOKEN = process.env.GITHUB_TOKEN
 const QUERY = `
 query($userName:String!) {
-	user(login: $userName){
-		contributionsCollection {
-			contributionCalendar {
-				weeks {
-					contributionDays {
-						contributionCount
-					}
-				}
-			}
-		}
-	}
+  user(login: $userName) {
+    contributionsCollection {
+      contributionCalendar {
+        weeks {
+          contributionDays {
+            contributionCount
+          }
+        }
+      }
+    }
+  }
 }`
 const VARIABLES = `
 {
-	"userName": "DervexDev"
+  "userName": "DervexDev"
 }`
 
 function getDummyData(length?: number): Array<number> {
-	length = length || 450
+	length = length || DUMMY_LENGTH
 
 	const data: Array<number> = []
 
@@ -38,7 +41,7 @@ function getData(mobile?: boolean, data?: Array<number>): Array<number> {
 	if (data) {
 		if (!mobile) {
 			if (data.length != 0) {
-				for (let i = 0; i < 90; i++) {
+				for (let i = 0; i < FILL_LENGTH; i++) {
 					data.push(data[i])
 				}
 
