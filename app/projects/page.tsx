@@ -29,6 +29,9 @@ import {
 	SiAmazonaws,
 	SiAmazondynamodb,
 	SiAwslambda,
+	SiLinux,
+	SiApple,
+	SiWindows,
 } from 'react-icons/si'
 
 import {
@@ -42,6 +45,7 @@ import {
 	UniversalComments,
 	Helium,
 	Byft,
+	Racky,
 } from '@/components/icons'
 
 import Container from '@/components/container'
@@ -93,6 +97,20 @@ const PROJECTS: Array<Project> = [
 			'https://devforum.roblox.com/t/2021776',
 			'https://argon.wiki',
 		],
+	},
+	{
+		name: 'Racky',
+		technologies: ['rust', 'linux', 'macos', 'windows'],
+		time: 'February 2026',
+		icon: Racky,
+		desc: (
+			<>
+				Simple but powerful multi-platform tool for managing programs and servers on your home network. Control and
+				monitor everything remotely using a single app from any machine on any OS. Configure programs, servers,
+				lifecycle and environment variables via config file or CLI.
+			</>
+		),
+		links: ['https://github.com/DervexDev/racky'],
 	},
 	{
 		name: 'CMLC',
@@ -288,6 +306,12 @@ export default function Projects() {
 					return div(index, <SiXcode />)
 				case 'roblox':
 					return div(index, <SiRobloxstudio />)
+				case 'linux':
+					return div(index, <SiLinux />)
+				case 'macos':
+					return div(index, <SiApple />)
+				case 'windows':
+					return div(index, <SiWindows />)
 				default:
 					return div(index, <BiError />)
 			}

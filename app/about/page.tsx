@@ -1,16 +1,14 @@
 import {
-	SiUnrealengine,
-	SiVisualstudio,
-	SiGit,
-	SiRobloxstudio,
-	SiBlender,
-	SiAdobe,
 	SiLua,
 	SiCplusplus,
 	SiRust,
 	SiTypescript,
 	SiSwift,
 	SiPython,
+	SiC,
+	SiCsharp,
+	SiKotlin,
+	SiGo,
 } from 'react-icons/si'
 import Container from '@/components/container'
 
@@ -20,44 +18,16 @@ interface Skill {
 	icon: JSX.Element
 }
 
-const softwareSkills: Array<Skill> = [
-	{
-		name: 'Unreal Engine',
-		level: 60,
-		icon: <SiUnrealengine />,
-	},
-	{
-		name: 'Visual Studio Code',
-		level: 100,
-		icon: <SiVisualstudio />,
-	},
-	{
-		name: 'Git',
-		level: 70,
-		icon: <SiGit />,
-	},
-	{
-		name: 'Roblox Studio',
-		level: 100,
-		icon: <SiRobloxstudio />,
-	},
-	{
-		name: 'Blender',
-		level: 50,
-		icon: <SiBlender />,
-	},
-	{
-		name: 'Adobe products',
-		level: 80,
-		icon: <SiAdobe />,
-	},
-]
-
-const languageSkills: Array<Skill> = [
+const SKILLS: Array<Skill> = [
 	{
 		name: 'Rust',
 		level: 90,
 		icon: <SiRust />,
+	},
+	{
+		name: 'C',
+		level: 60,
+		icon: <SiC />,
 	},
 	{
 		name: 'C++',
@@ -65,8 +35,19 @@ const languageSkills: Array<Skill> = [
 		icon: <SiCplusplus />,
 	},
 	{
-		name: 'TypeScript & JS',
+		name: 'C#',
 		level: 80,
+		icon: <SiCsharp />,
+	},
+	{
+		name: 'Kotlin & Java',
+		level: 30,
+		icon: <SiKotlin />,
+	},
+
+	{
+		name: 'TypeScript & JS',
+		level: 90,
 		icon: <SiTypescript />,
 	},
 	{
@@ -75,14 +56,19 @@ const languageSkills: Array<Skill> = [
 		icon: <SiLua />,
 	},
 	{
+		name: 'Python',
+		level: 70,
+		icon: <SiPython />,
+	},
+	{
 		name: 'Swift',
 		level: 40,
 		icon: <SiSwift />,
 	},
 	{
-		name: 'Python',
-		level: 60,
-		icon: <SiPython />,
+		name: 'Go',
+		level: 20,
+		icon: <SiGo />,
 	},
 ]
 
@@ -132,23 +118,23 @@ export default function About() {
 				<p className='px-4 py-2 text-justify'>
 					I’ve been programming since 2020 and I’m 100% self-taught. Currently I focus on <b>CLI apps (Rust)</b>
 					<b> Unreal Engine (C++)</b>, <b>Roblox (Luau)</b>, and various
-					<b> web tools (JavaScript and TypeScript)</b>. I’m graphic designer by profession and I’m familiar with:
-					<b> Photoshop</b>, <b>Illustrator</b>, <b>PremierePro</b>, <b>AfterEffects</b> and <b>Audition</b>. I’m also
-					good at <b>Blender</b>, I know how create game-ready models and animate them.
+					<b> web tools (TypeScript)</b>. I’m graphic designer by profession and I’m familiar with the whole{' '}
+					<b>Adobe Creative</b> suite. I’m also good at <b>Blender</b>, I know how create game-ready models and animate
+					them.
 				</p>
 			</Container>
 
 			<Container className='w-[600px] m-[20px] self-center'>
 				<Container className='h-[78px] text-3xl sm:text-4xl flex items-center justify-center' borders='b'>
-					<b>Tech stack</b>
+					<b>Language Skills</b>
 				</Container>
 
 				<div className='flex flex-row'>
 					<Container className='w-1/2' borders='r'>
-						{graphs(softwareSkills)}
+						{graphs(SKILLS.slice(0, SKILLS.length / 2))}
 					</Container>
 
-					<div className='w-1/2'>{graphs(languageSkills)}</div>
+					<div className='w-1/2'>{graphs(SKILLS.slice(SKILLS.length / 2))}</div>
 				</div>
 			</Container>
 		</div>
